@@ -1,0 +1,78 @@
+.select-cont {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 54px;
+  box-sizing: border-box;
+  border: 1px solid #2563eb;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  background-color: #ffffff;
+  user-select: none;
+
+  &.open {
+    border-color: #1e4fcc;
+  }
+
+  // Стрілка
+  &::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-image: url('/selectArrow.svg'); // твій SVG
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(calc(-50% - 2.5px)) rotate(180deg);
+    transform-origin: center;
+    font-size: 25px;
+    color: #000;
+    pointer-events: none;
+    transition: transform 0.25s ease-in-out;
+  }
+
+  &.open::after {
+    transform: translateY(calc(-50% + 2.5px)) rotate(0);
+  }
+}
+
+.select-display {
+  width: 100%;
+  font-size: 16px;
+  color: #000;
+}
+
+.select-options {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #2563eb;
+  border-radius: 12px;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 50;
+  padding: 5px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.option-item {
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  background: #fff;
+
+  &:hover {
+    background: #f0f7ff;
+  }
+
+  &.selected {
+    background: #dceaff;
+    font-weight: 600;
+  }
+}

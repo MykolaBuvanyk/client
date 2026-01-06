@@ -1,0 +1,16 @@
+@import '../app.scss';
+
+.contacts-container {
+  .bread {
+    @include responsive-width;
+    margin-top: 60px;
+    .contacts-container {
+      margin-top: 20px;
+    }
+    margin-bottom: -40px;
+    @media (max-width: 768px) {
+      margin-top: 40px;
+      margin-bottom: -20px;
+    }
+  }
+}

@@ -1,0 +1,160 @@
+@import '../../[lang]/app.scss';
+
+.footer-container {
+  padding: 0;
+  border-top: 1px solid #363636;
+  @media (max-width: 768px) {
+    padding-bottom: 30px;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    .up {
+      @include responsive-width;
+      padding: 30px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .logo-and-social {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+        .languages {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+          a {
+            font-weight: 300;
+            font-style: Light;
+            font-size: 14px;
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0%;
+            vertical-align: middle;
+            color: #d9d9d9;
+            text-decoration: none;
+            &:hover {
+              color: #d4af37;
+            }
+          }
+        }
+        .socials {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+          svg {
+            scale: 1.3;
+            transition: transform 0.3s ease;
+
+            // Стилізуємо path тільки при ховері на саме SVG
+            &:hover {
+              // Якщо у вас кілька path і треба змінити саме другий
+              path:nth-child(2) {
+                fill: #d4af37;
+                transition: fill 0.3s ease;
+              }
+              path:nth-child(3) {
+                fill: #d4af37;
+                transition: fill 0.3s ease;
+              }
+              path:nth-child(4) {
+                fill: #d4af37;
+                transition: fill 0.3s ease;
+              }
+              path:nth-child(5) {
+                fill: #d4af37;
+                transition: fill 0.3s ease;
+              }
+              path:nth-child(6) {
+                fill: #d4af37;
+                transition: fill 0.3s ease;
+              }
+            }
+          }
+        }
+        @media (max-width: 1024px) {
+          padding: 0;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+
+          .logo {
+            order: 1;
+            zoom: 0.4;
+            padding-bottom: 30px;
+          }
+          .languages {
+            order: 3;
+            border-top: 1px solid #1e1e1e;
+            padding: 10px 0;
+            width: 100%;
+            flex-wrap: wrap;
+          }
+          .socials {
+            order: 2;
+          }
+        }
+      }
+    }
+    .down-container {
+      border-top: 1px solid #1e1e1e;
+      @media (max-width: 1024px) {
+        border: none;
+      }
+      .down {
+        @include responsive-width;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px 0;
+        .languages {
+          font-weight: 300;
+          font-style: Light;
+          font-size: 14px;
+          leading-trim: NONE;
+          line-height: 100%;
+          letter-spacing: 0%;
+          vertical-align: middle;
+          color: #d9d9d9;
+          text-decoration: none;
+        }
+        .info {
+          font-weight: 400;
+          font-style: Regular;
+          font-size: 14px;
+          line-height: 130%;
+          letter-spacing: 0%;
+          text-align: right;
+          color: #d9d9d9;
+          text-decoration: none;
+          &:hover {
+            color: #d4af37;
+          }
+        }
+        @media (max-width: 768px) {
+          padding: 0;
+          border: none;
+          .languages {
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 11px;
+            line-height: 130%;
+            letter-spacing: 0%;
+            color: #d9d9d9;
+          }
+          .info {
+            position: absolute;
+            right: 0;
+            top: 30px;
+          }
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      position: relative;
+    }
+  }
+}

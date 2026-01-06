@@ -1,0 +1,60 @@
+@import '../../[lang]/app.scss';
+
+@keyframes scroll-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.endless-scroll {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  @include margin-page;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 195, 0, 0) 0%,
+    #ffc300 48.12%,
+    rgba(255, 195, 0, 0) 100%
+  );
+}
+
+.scroll-wrapper {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 50s linear infinite;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
+  height: 50px;
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    padding-top: 4px;
+  }
+
+  span {
+    font-size: 32px;
+    line-height: 12px;
+    font-weight: 900;
+    color: #fff;
+    padding-bottom: 2px;
+  }
+}

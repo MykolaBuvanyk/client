@@ -1,0 +1,302 @@
+@keyframes spin-gear {
+  from {
+    // ВАЖЛИВО: ми повторюємо початковий зсув, щоб він не скидався
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main-animation-container {
+  max-width: 870px;
+  width: 50%;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 768px) {
+    zoom: 0.6;
+  }
+  .big-circle {
+    position: absolute;
+    left: 25%;
+    top: 27%;
+    img {
+      width: 70%;
+      height: auto;
+    }
+    //animation: floatSide 6s ease-in-out infinite;
+    will-change: transform;
+  }
+  .elem-spin {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    &.elem-spin2 {
+      top: 73%;
+      left: 18%;
+    }
+    &.elem-spin3 {
+      top: 40%;
+      left: 80%;
+    }
+    .spin {
+      position: relative;
+      width: 114px;
+      height: 109px;
+
+      .full {
+        position: absolute;
+        top: -19.5%;
+        left: -15.29%;
+        z-index: 3;
+        opacity: 1;
+
+        path {
+          stroke: red;
+          fill: transparent;
+          stroke-width: 0.1px;
+        }
+      }
+      .up {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .up2 {
+        position: absolute;
+        left: 7%;
+        top: 13%;
+      }
+      .quater1 {
+        position: absolute;
+        top: 22.8%;
+        left: 17.9%;
+      }
+      .quater2 {
+        position: absolute;
+        top: 23.9%;
+        left: 58.9%;
+      }
+      .quater3 {
+        position: absolute;
+        top: 67%;
+        left: 42.75%;
+      }
+      .quater4 {
+        position: absolute;
+        top: 50.15%;
+        left: 16.75%;
+      }
+      .thin {
+        position: absolute;
+        top: 33%;
+        left: 26.6%;
+      }
+      .circle {
+        position: absolute;
+        top: 37.25%;
+        left: 31%;
+      }
+      .gear {
+        position: absolute;
+        // Використовуємо ваші координати
+        top: 48.5%;
+        left: 41.75%;
+
+        // Центруємо саму іконку відносно цієї точки
+        // translate(-50%, -50%) робить центр іконки ідеальною віссю обертання
+        //transform: translate(-50%, -50%);
+
+        // Запускаємо анімацію
+        //animation: spin-gear 4s linear infinite;
+
+        // Фіксуємо точку опори строго по центру
+        transform-origin: center center;
+
+        // Обов'язково для плавності (вмикає апаратне прискорення)
+        will-change: transform;
+
+        // Прибирає субпіксельне розмиття
+        backface-visibility: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      .arrows {
+        position: absolute;
+        top: 51%;
+        left: 41.75%;
+      }
+      .square {
+        position: absolute;
+        top: 49.5%;
+        left: 41.75%;
+      }
+    }
+  }
+  .smoll-circle {
+    position: absolute;
+    top: 52%;
+    left: 11%;
+    img {
+      width: 12%;
+      height: auto;
+    }
+  }
+  .the-smoll-circle {
+    position: absolute;
+    top: 62%;
+    left: 21%;
+    img {
+      width: 7.5%;
+      height: auto;
+    }
+  }
+  .mini-big-circle {
+    position: absolute;
+    top: 19%;
+    left: 72%;
+    img {
+      width: 60%;
+      height: auto;
+    }
+  }
+  .mini-get-offer {
+    position: absolute;
+    top: 26%;
+    left: 0;
+    z-index: 5;
+    span {
+      position: absolute;
+      top: 54%;
+      left: 10%;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 10px;
+      line-height: 130%;
+      letter-spacing: 0%;
+      text-align: center;
+      text-transform: uppercase;
+      color: #d9d9d9;
+      white-space: nowrap;
+      width: 110px;
+      z-index: 6;
+    }
+  }
+  .beck1 {
+    position: absolute;
+    top: 57%;
+    left: 10%;
+  }
+  .num-web {
+    position: absolute;
+    top: 72%;
+    left: 45%;
+    padding: 20px 40px;
+    border: 1px solid #d4af3712;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    p {
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 15px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-align: center;
+      vertical-align: middle;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+    span {
+      font-weight: 700;
+      font-style: Bold;
+      font-size: 70px;
+      line-height: 70px;
+      letter-spacing: 0%;
+      text-align: center;
+      vertical-align: middle;
+      color: #d4af37;
+    }
+  }
+  .beck2 {
+    position: absolute;
+    left: -17%;
+    top: 0%;
+
+    svg {
+      min-width: 100%;
+
+      /* трохи розмиття для плавності */
+      filter: blur(0.5px);
+
+      /* маска для фейду лише зліва */
+      -webkit-mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 10%
+      );
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: left;
+      -webkit-mask-size: cover;
+
+      mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 10%
+      );
+      mask-repeat: no-repeat;
+      mask-position: left;
+      mask-size: cover;
+    }
+  }
+  .beck3 {
+    position: absolute;
+    top: 13%;
+    left: 60%;
+  }
+  .mouse {
+    position: absolute;
+    top: 86%;
+    left: -8%;
+    width: 100px; // Задайте фіксований розмір контейнера
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 1024px) {
+      display: none;
+    }
+    .text-wrapper {
+      position: absolute;
+      animation: rotateText 10s linear infinite;
+      width: 100%;
+      height: 100%;
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .mouse-icon {
+      position: relative;
+      z-index: 2;
+
+      // Сама мишка не крутиться
+    }
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+}
+
+@keyframes rotateText {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

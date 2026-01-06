@@ -1,0 +1,158 @@
+@import '../../[lang]/app.scss';
+
+.worldMap {
+  @include responsive-width;
+  @include margin-page;
+
+  .worldMapTitle {
+    font-style: ExtraBold;
+    font-size: 42px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #d4af37;
+
+    @media (max-width: 768px) {
+      font-size: 22px;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .mapContainer {
+    position: relative;
+    width: 100%;
+    padding-bottom: 49.93%;
+    /* Співвідношення сторін 352/705 ≈ 0.4993 */
+    height: 0;
+  }
+
+  .mapBackground {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/map.svg');
+    /* Шлях до вашої мапи */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .mapPoint {
+    position: absolute;
+    background: #0f0f21;
+    border-radius: 50%;
+    border: 3px solid #ffc300;
+    padding: 0.5%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px #ffc300;
+    z-index: 2;
+  }
+
+  .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+  }
+
+  .mapPoint:hover .tooltip {
+    opacity: 1;
+    z-index: 10;
+  }
+
+  .getOfferWrapper {
+    position: absolute;
+    display: flex;
+    left: 33%;
+    top: 70%;
+    .text-span {
+      position: relative;
+      span {
+        top: 57%;
+        margin-left: 15px;
+        position: absolute;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 10px;
+        line-height: 130%;
+        letter-spacing: 0%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #d9d9d9;
+        white-space: nowrap;
+        width: 110px;
+        @media (max-width: 768px) {
+          top: 135%;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      bottom: 0;
+      transform: scale(0.7);
+    }
+  }
+
+  .getOffer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    flex-direction: column;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(2px);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .getOffer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Займає весь простір елемента */
+    padding: 2px;
+    margin: -2px;
+    border-radius: 50%;
+    /* Кругла форма для "межі" */
+    border: 5px solid #d4af3780;
+    /* Градієнт */
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    /* Маска для створення "межі" */
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    /* Виключаємо внутрішню частину */
+    z-index: 1;
+  }
+
+  .getOffer p {
+    align-items: center;
+  }
+
+  .getOffer img {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5px;
+  }
+}

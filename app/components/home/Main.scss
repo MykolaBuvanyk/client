@@ -1,0 +1,184 @@
+@import '../../[lang]/app.scss';
+.main-container {
+  position: relative;
+  .main {
+    @include responsive-width;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 1024px) {
+      flex-direction: column-reverse;
+      align-items: unset;
+    }
+    position: relative;
+    .text-cont {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-top: 20px;
+
+      .text {
+        width: 719px;
+        position: absolute;
+        @media (max-width: 1024px) {
+          width: unset;
+        }
+        h1 {
+          font-style: Regular;
+          font-size: 60px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          text-transform: uppercase;
+          color: #d4af37;
+          @media (max-width: 768px) {
+            font-size: 28px;
+          }
+          margin: 0;
+        }
+        p {
+          font-weight: 500;
+          font-style: Medium;
+          font-size: 16px;
+          line-height: 130%;
+          letter-spacing: 0%;
+          color: #d9d9d9;
+          margin: 20px 0;
+          margin-top: 30px;
+          padding: 0;
+          @media (max-width: 768px) {
+            font-size: 12px;
+            margin: 10px 0;
+          }
+        }
+        .row {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          text-decoration: none;
+          gap: 10px;
+          button {
+            cursor: pointer;
+            background: linear-gradient(90deg, #d4af37 0%, #ffda63 100%);
+            box-shadow: 0px 5px 15px 0px #ffc30066;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 70px;
+            padding: 17.5px 27.5px;
+            width: 270px;
+            align-items: center;
+            height: 60px;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            line-height: 20px;
+
+            span {
+              font-weight: 600;
+              font-style: SemiBold;
+              font-size: 15px;
+              line-height: 20px;
+              letter-spacing: 0%;
+            }
+            .svg {
+              margin-top: 5px;
+            }
+            border: none;
+            &:hover {
+              background: transparent;
+              color: #ffffff;
+              box-shadow: none;
+              border: 2px solid #ffffff;
+            }
+          }
+          .gift {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: flex-end;
+            img {
+              animation: GiftBlink 3s linear infinite;
+            }
+
+            .mouse {
+              position: absolute;
+              bottom: -20px;
+              right: 0;
+              transition: transform 0.5s ease-in-out;
+              transform-origin: center center; // обертання від центру
+              transform: rotate(-45deg); // плоске обертання на 45° по Z-ось
+              animation:
+                mouseMove 3s ease-in-out infinite,
+                mouseBlink 3s linear infinite;
+
+              transform-origin: center;
+              will-change: transform, opacity;
+            }
+          }
+        }
+        @media (max-width: 1024px) {
+          position: unset;
+        }
+      }
+    }
+  }
+  .elem {
+    position: absolute;
+    top: 79px;
+    left: -111px;
+
+    // Ефект "світіння"
+    background: rgba(212, 175, 55, 0.8); // #d4af37 з прозорістю
+    filter: blur(200px); // Застосовуємо blur до самого елемента
+    width: 222.5px;
+    height: 222.5px;
+    border-radius: 100%;
+
+    // Позиціонування позаду контенту
+    z-index: 0;
+  }
+}
+
+@keyframes mouseMove {
+  0% {
+    transform: translate(0, 0) rotate(-45deg);
+  }
+
+  50% {
+    transform: translate(-35px, -35px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(-45deg);
+  }
+}
+
+@keyframes mouseBlink {
+  0%,
+  45%,
+  55%,
+  100% {
+    opacity: 1;
+  }
+
+  48%,
+  52% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes GiftBlink {
+  0%,
+  45%,
+  55%,
+  100% {
+    opacity: 1;
+  }
+
+  48%,
+  52% {
+    opacity: 0.5;
+  }
+}

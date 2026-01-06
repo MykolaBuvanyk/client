@@ -1,0 +1,136 @@
+@import '../../[lang]/app.scss';
+
+.services-container {
+  @include margin-page;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  .services-bg-video {
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // відео масштабується без деформації
+    z-index: 0;
+  }
+  min-height: 30vh;
+  .services {
+    @include responsive-width;
+    padding: 70px 0;
+    @media (max-width: 768px) {
+      padding-top: 35px;
+    }
+    .logo {
+      svg {
+        circle {
+          animation: blink 1.5s ease-in-out infinite;
+        }
+      }
+    }
+    .list-info-cont {
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+      margin-top: 25px;
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 20px;
+      }
+      h2 {
+        font-style: Regular;
+        font-size: 30px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #6d6d6d;
+        padding: 0;
+        margin: 0;
+        padding-top: 20px;
+        @media (max-width: 768px) {
+          font-size: 22px;
+          padding-top: 10px;
+        }
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        li {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+          border-bottom: 1px solid #3d3d3d;
+          padding: 20px;
+          cursor: pointer;
+          z-index: 5;
+
+          .text {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+              margin: 0;
+              font-style: Regular;
+              font-size: 40px;
+              line-height: 40px;
+              letter-spacing: 0%;
+              text-transform: uppercase;
+              color: #ffffff;
+              @media (max-width: 768px) {
+                font-size: 22px;
+              }
+            }
+            p {
+              font-weight: 500;
+              font-style: Medium;
+              font-size: 14px;
+              line-height: 130%;
+              letter-spacing: 0%;
+              color: #d9d9d9;
+            }
+            span {
+              font-weight: 900;
+              font-style: Black;
+              font-size: 14px;
+              line-height: 130%;
+              letter-spacing: 0%;
+              color: #d9d9d9;
+            }
+          }
+
+          .svg {
+            padding: 5px;
+            display: flex;
+            align-items: flex-start;
+          }
+          &:hover {
+            background: #0c0c0c10;
+            backdrop-filter: blur(25px);
+            h3 {
+              color: #d4af37;
+            }
+            .svg {
+              border: 1px solid #d4af37b2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "header": {
+    "service": "Послуги",
+    "listServices": {
+      "titleDevelop": "Послуги з розробки",
+      "develop": {
+        "internet-shop": "Інтернет-магазини",
+        "corporate-shop": "Корпоративні сайти",
+        "landing": "Landing page",
+        "shablon": "Шаблонний інтернет-магазин",
+        "complex-web": "Складні веб-проєкти",
+        "phone-app": "Мобільні додатки"
+      },
+      "digitalTitle": "Digital marketing",
+      "listDigital": {
+        "seo": "SEO-просування",
+        "contextual-advertising": "Контекстна реклама",
+        "advertising-social": "Реклама в соціальних мережах",
+        "product-фdvertising": "Товарна реклама"
+      },
+      "titleList": "що ми використовуємо у роботі"
+    },
+    "urls": {
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "reviews": "Reviews",
+      "contacts": "Contacts"
+    }
+  },
+  "footer": {
+    "urls": {
+      "navigate": {
+        "title": "Навігація",
+        "potrfolio": "Портфоліо"
+      }
+    },
+    "info": "© 2021-2025 «FULLSTACK-INNOVATIONS» Створення сайтів"
+  },
+  "home": {
+    "main": {
+      "title": "Developing websites that deliver results",
+      "description": "We create modern websites that generate leads, sales, and trust.</br> Your website will be user-friendly, fast, and ready for growth",
+      "button": "Contact us"
+    },
+    "whyMe": {
+      "title": "Чому це вигідно саме у нас",
+      "yourProject": "Розкажіть про свій проєкт"
+    },
+    "unikalAgention": {
+      "title": "Fullstack innovations</br>— це унікальна агенція",
+      "desc1": "Ми - команда професіоналів у галузі веб-розробки та інновацій, яка готова перетворити ваші концепції в успішні та прибуткові проєкти. З кінця 2021 року ми вже реалізували понад 75 успішних веб-сайтів, що свідчить про наш високий рівень експертизи та професіоналізму.",
+      "desc2": "Наш підхід базується на індивідуальному відношенні до кожного клієнта, забезпечуючи розробку сучасних, продуктивних та унікальних веб-рішень. Ми однозначно враховуємо останні тренди та вимоги галузі, щоб надати вашому проєкту конкурентні переваги.",
+      "button": "Розкажіть про свій проєкт",
+      "doneProject": "виконаних проєктів"
+    },
+    "weOpen": {
+      "title": "Ми відкриті до можливостей партнерства з однодумцями-компаніями або окремими особами. Тож, як бачимо, партнерство з нами може бути цікавим для:",
+      "miniTitle1": "Засновники стартапів",
+      "miniDesc1": "Кому потрібна технічна команда для запуску продукту та розвитку бізнесу на умовах стратегічної співпраці",
+      "miniTitle2": "Власники бізнесу",
+      "miniDesc2": "Кому важлива наша експертиза для посилення продажів та розширення власних можливостей",
+      "miniTitle3": "Афілійовані продавці",
+      "miniDesc3": "Хто зацікавлений у продажі наших послуг та отриманні стабільної комісії"
+    },
+    "WhyIt": {
+      "title": "Why it is profitable to work with us",
+      "button": "Tell us about your project",
+      "miniTitle1": "Website on a 3-month installment plan",
+      "miniDesc1": "Get your website now, pay in installments — fast, convenient, and without overpaying.",
+      "miniTitle2": "Optimized fast website",
+      "miniDesc2": "Pages load in seconds, everything works smoothly and is user-friendly, modern, efficient, optimized.",
+      "miniTitle3": "Website support",
+      "miniDesc3": "3 months of free, reliable support with ongoing, responsive 24/7 communication thereafter."
+    },
+    "Services": {
+      "title": "services",
+      "miniTitle1": "Landing page",
+      "desc1": "A website with a simple structure, where all information is located on one page. Suitable for those who want to tell about themselves or their product/services.",
+      "info1": "Terms – 3-7 days",
+      "miniTitle2": "CORPORATE SITE",
+      "desc2": "A multi-page website with a complex structure that presents the company, its services, team, and achievements. Suitable for businesses seeking to strengthen their image, attract customers and partners, and communicate effectively online.",
+      "info2": "Terms – 12-20 days",
+      "miniTitle3": "Online store",
+      "desc3": "A multi-page website for selling goods online, with a catalog, product cards, shopping cart, and payment. Suitable for businesses that want to sell their products directly through the web.",
+      "info3": "Terms – 25-45 days",
+      "miniTitle4": "Delivery website",
+      "desc4": "A multi-page website with functionality for ordering and tracking the delivery of goods or services. Suitable for companies that provide courier or service delivery.",
+      "info4": "Terms – 7-15 days",
+      "miniTitle5": "Business website",
+      "desc5": "A multi-page website for presenting your business, its services, and contacts, with a focus on attracting customers and partners. Suitable for companies of any size.",
+      "info5": "Terms – 10-20 days",
+      "miniTitle6": "Mobile applications",
+      "desc6": "Software products for iOS and Android with an intuitive interface and convenient functionality. Suitable for businesses and services that want to be always at hand for users.",
+      "info6": "Terms – 45-120 days"
+    },
+    "OurPortfolio": {
+      "title": "our portfolio",
+      "button": "Tell us about your project"
+    },
+    "Reviews": {
+      "title": "reviews"
+    },
+    "Map": {
+      "title": "customers from all over the world"
+    }
+  }
+}

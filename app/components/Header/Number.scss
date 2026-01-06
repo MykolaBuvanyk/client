@@ -1,0 +1,112 @@
+.number-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 130%;
+  color: #f6f6f6;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+
+  /* ===== HEADER ===== */
+  .list {
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+    cursor: pointer;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #f6f6f6;
+      text-decoration: none;
+      white-space: nowrap;
+      &:hover {
+        color: #ffda63;
+      }
+    }
+  }
+
+  /* ===== ARROW ===== */
+  .svg {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+
+  /* ===== DROPDOWN ===== */
+  .dropdown {
+    position: absolute;
+    top: 70%;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+
+    border-radius: 20px;
+    border: 1px solid #d4af371a;
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: 0.25s ease;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 700;
+      font-size: 15px;
+      color: #f6f6f6;
+      text-decoration: none;
+      white-space: nowrap;
+      @media (max-width: 768px) {
+        font-size: 13px;
+      }
+      &:hover {
+        color: #ffda63;
+      }
+    }
+  }
+
+  /* ========================= */
+  /* ===== DESKTOP HOVER ===== */
+  /* ========================= */
+  @media (min-width: 769px) {
+    &:hover {
+      .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  /* ========================= */
+  /* ===== MOBILE CLICK ===== */
+  /* ========================= */
+  &.open {
+    .dropdown {
+      opacity: 1;
+      visibility: visible;
+      top: 100%;
+    }
+
+    .svg {
+      transform: rotate(180deg);
+    }
+  }
+}

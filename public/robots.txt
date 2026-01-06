@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Важливе — дозволяємо Next.js службові файли
+Allow: /_next/
+Allow: /static/
+Allow: /images/
+Allow: /public/
+
+# Забороняємо приватні речі (якщо треба)
+Disallow: /admin
+
+# Карта сайту
+Sitemap: https://speakclubingerman.com/sitemap.xml

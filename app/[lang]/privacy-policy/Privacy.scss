@@ -1,0 +1,122 @@
+@import '../app.scss';
+
+.privacy-container {
+  @include margin-page;
+  margin-top: 110px;
+  h1 {
+    font-style: Regular;
+    font-size: 46px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #d4af37;
+  }
+  .col {
+    .text {
+      h1,
+      p {
+        max-width: 900px;
+      }
+      @include responsive-width;
+    }
+    position: relative;
+    img {
+      position: absolute;
+      width: 70%;
+      height: auto;
+      right: 0;
+      top: -10%;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+  .all {
+    @include responsive-width;
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; // Збільшено для кращого вигляду, як на макеті
+      margin: 0;
+      padding: 0;
+      list-style: none; // Прибираємо стандартні маркери
+      counter-reset: my-counter; // Ініціалізуємо лічильник для цифр
+
+      li {
+        margin: 0;
+        padding: 0;
+        display: flex; // Для вирівнювання маркера та тексту
+        align-items: flex-start;
+        gap: 12px;
+
+        font-weight: 500;
+        font-style: normal; // В CSS Medium задається через weight
+        font-size: 15px;
+        line-height: 130%;
+        letter-spacing: 0%;
+        color: #d9d9d9;
+        counter-increment: my-counter; // Збільшуємо лічильник на кожному li
+
+        &::before {
+          content: counter(my-counter);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0; // Щоб коло не стискалося
+
+          width: 20px;
+          height: 20px;
+          background-color: #d4af37; // Ваш золотий/жовтий колір
+          color: #fff; // Колір цифри всередині
+          border-radius: 50%;
+          box-shadow: 0px 5px 15px 0px #ffc30066;
+
+          font-size: 11px;
+          font-weight: 700;
+          line-height: 1;
+          margin-top: 3px; // Коригування для вирівнювання по першій стрічці тексту
+          font-weight: 500;
+          font-style: Medium;
+          font-size: 12px;
+          line-height: 130%;
+          letter-spacing: 0%;
+          text-align: center;
+        }
+      }
+    }
+  }
+  p {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: #d9d9d9;
+  }
+  span {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    leading-trim: NONE;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: #d4af37;
+  }
+  h2 {
+    font-style: Bold;
+    font-size: 22px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: #d9d9d9;
+  }
+
+  a {
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 15px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: #d4af37;
+    text-decoration: none;
+  }
+}

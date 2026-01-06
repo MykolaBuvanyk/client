@@ -1,0 +1,87 @@
+$primary-color: #2563eb; // Насичений синій колір для активної сторінки
+
+.client-pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; // Відстань між елементами
+  padding: 20px 0;
+}
+
+.pagination-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; // Фіксована ширина, як на зображенні
+  height: 40px; // Фіксована висота
+  border-radius: 8px; // Закруглені кути
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &.number {
+    background-color: transparent;
+    border: 1px solid #e0e6f0; // Світла рамка
+    color: #000;
+
+    // Стиль активної сторінки
+    &.active {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      color: #fff;
+      cursor: default;
+    }
+
+    &:not(.active):hover {
+      background-color: #f4f7fa; // Легкий фон при наведенні
+    }
+  }
+
+  &.prev,
+  &.next {
+    background-color: transparent;
+    border: 1px solid transparent; // Невидима рамка, але зберігає розмір
+    color: $primary-color;
+    font-weight: 900;
+
+    &:hover:not(:disabled) {
+      background-color: #f4f7fa;
+    }
+
+    &:disabled {
+      color: #f4f7fe; // Сірий колір для неактивних кнопок
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    // Стиль для кнопок навігації (як на зображенні - заокруглений квадрат зі світлим фоном)
+    &.prev {
+      border: 1px solid #f4f7fe;
+      color: #b0b0b0;
+    }
+
+    &.next {
+      background-color: #f4f7fe; // Світлий фон для "Далі"
+      color: $primary-color;
+
+      &:hover:not(:disabled) {
+        background-color: #e6e9ee;
+      }
+    }
+  }
+
+  &.dots {
+    // Стиль для багатокрапки
+    background-color: transparent;
+    border: 1px solid #e0e6f0;
+    color: #000;
+    cursor: default;
+  }
+}
