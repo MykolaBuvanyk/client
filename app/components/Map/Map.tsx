@@ -57,10 +57,26 @@ const WorldMapPartnership: React.FC<Props> = ({ dictionary }) => {
             );
           })}
           <Link href={`#contacts`} className={'getOfferWrapper'}>
-            <div className="text-span">
+            <GetOffer className="getOfferSvg" />
+            <div className="getOfferContent">
+              <svg
+                className="getOfferArrow"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.75 0.75H10.75M10.75 0.75V10.75M10.75 0.75L0.75 10.75"
+                  stroke="white"
+                  strokeWidth={1.5}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
               <span>get an offer</span>
             </div>
-            <GetOffer />
           </Link>
         </div>
       </div>

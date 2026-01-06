@@ -3,7 +3,6 @@ import { Locale } from '@/i18n.config';
 import React from 'react';
 import './Services.scss';
 import LogoSVG from '../../assest/Services/Logo.svg';
-import ArrowSVG from '../../assest/Services/Arrow.svg';
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 import { setInteresets } from '@/app/store/reducers/formReducers';
@@ -65,7 +64,21 @@ const Services = ({ dictionary }: Props) => {
                   <span>{dictionary[`info${x}`]}</span>
                 </div>
                 <div className="svg">
-                  <ArrowSVG />
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.75 0.75H10.75M10.75 0.75V10.75M10.75 0.75L0.75 10.75"
+                      stroke="white"
+                      strokeWidth={1.5}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </div>
               </li>
             ))}
