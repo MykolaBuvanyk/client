@@ -93,6 +93,8 @@ $gold: #d4af37;
           transition: transform 0.5s ease;
           img {
             opacity: 0.8;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
           }
         }
 
@@ -114,11 +116,11 @@ $gold: #d4af37;
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
-          background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.9) 0%,
-            transparent 60%
-          );
+          // background: linear-gradient(
+          //   to top,
+          //   rgba(0, 0, 0, 0.9) 0%,
+          //   transparent 60%
+          // );
 
           @media (max-width: 768px) {
             padding: 20px;
@@ -159,13 +161,17 @@ $gold: #d4af37;
           justify-content: space-between;
           background: $gold;
           color: #000;
+          border: 2px solid transparent;
           padding: 12px 20px;
           font-weight: 700;
           width: 70%;
           margin-top: 20px;
+          cursor: pointer;
+          transition: 0.3s;
           &:hover {
-            background-color: #ffffff;
-            border: none;
+            background: transparent;
+            border-color: #ffffff;
+            color: #ffffff;
           }
         }
 
@@ -216,7 +222,9 @@ $gold: #d4af37;
     }
     &.active {
       &:hover {
-        background-color: #d4af3740;
+        background: transparent !important;
+        border-color: #ffffff !important;
+        color: #ffffff !important;
       }
     }
   }

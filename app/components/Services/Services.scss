@@ -14,6 +14,8 @@
     height: 100%;
     object-fit: cover; // відео масштабується без деформації
     z-index: 0;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
   }
   min-height: 30vh;
   .services {

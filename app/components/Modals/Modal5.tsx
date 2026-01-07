@@ -4,6 +4,7 @@ import React from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 import { useSelector } from 'react-redux';
 import SonSVG from '../../assest/Modal/sun.svg';
+import { FaArrowRightLong } from 'react-icons/fa6';
 
 type Props = { finish: any; close: any };
 
@@ -76,7 +77,12 @@ const Modal5 = ({ finish, close }: Props) => {
           </button>
         )}
         <div style={{ width: '100%' }} onClick={finish} className="finish">
-          Back to main page
+          <p>
+            Back to main page
+          </p>
+          <div className="svg">
+            <FaArrowRightLong color="#000000" />
+          </div>
         </div>
       </div>
     </>

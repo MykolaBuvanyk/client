@@ -13,13 +13,15 @@
   .modal {
     position: relative;
     border: 1px solid #d4af37;
-    width: 720px;
+    width: 710px;
     max-width: 90%;
-    padding: 40px;
+    padding: 50px;
     box-sizing: border-box;
+
     @media (max-width: 768px) {
       padding: 20px;
     }
+
     //background-color: #000000;
 
     video {
@@ -29,15 +31,17 @@
       top: 0;
       left: 0;
       object-fit: cover;
-      filter: brightness(0.4);
+      filter: brightness(0.4) grayscale(100%);
       z-index: -1;
     }
+
     .close {
       position: absolute;
       right: 20px;
       top: 20px;
       cursor: pointer;
     }
+
     h2 {
       font-style: Regular;
       font-size: 32px;
@@ -45,14 +49,16 @@
       letter-spacing: 0%;
       text-transform: uppercase;
       color: #d4af37;
-      margin-top: 20px;
+      margin-top: 0px;
       margin-bottom: 40px;
     }
+
     .i-text {
-      margin: 20px 0;
+      // margin: 20px 0;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 15px;
+
       input {
         width: 100%;
         background-color: transparent;
@@ -62,24 +68,38 @@
         color: #fff;
         border-bottom: 1px solid #ffffff;
       }
+
       .finish {
         background: linear-gradient(90deg, #d4af37 0%, #ffda63 100%);
         display: flex;
+        justify-content: space-between;
         align-items: center;
         gap: 60px;
+        
         font-weight: 600;
         font-style: SemiBold;
         font-size: 15px;
         line-height: 100%;
         letter-spacing: 0%;
         color: #0c0c0c;
-        height: 50px;
+        height: 60px;
         box-sizing: border-box;
         padding: 20px;
-        margin-top: 15px;
+        margin-top: 5px;
         border: none;
         cursor: pointer;
+
+        p {
+          color: #0c0c0c;
+          font-weight: 600;
+          font-style: SemiBold;
+          font-size: 15px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          color: #0c0c0c;
+        }
       }
+
       .gift {
         border: 1px solid #d4af37;
         background: #0c0c0c1a;
@@ -98,10 +118,12 @@
         padding: 10px;
       }
     }
+
     .type {
       display: flex;
       flex-direction: column;
-      gap: 7.5px;
+      gap: 16px;
+
       .value {
         font-weight: 300;
         font-style: Light;
@@ -113,9 +135,9 @@
 
         display: flex;
         align-items: center;
-        gap: 7.5px; // Збільшено для кращого вигляду згідно з макетом
+        gap: 6.5px; // Збільшено для кращого вигляду згідно з макетом
         cursor: pointer;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
 
         input {
           // Приховуємо стандартний інпут, але залишаємо доступним для фокусу
@@ -124,7 +146,7 @@
           cursor: pointer;
 
           // Стиль кастомного кола (коли НЕ вибрано)
-          & + .custom-radio {
+          &+.custom-radio {
             width: 15px;
             height: 15px;
             border: 2px solid #d4af37;
@@ -137,7 +159,7 @@
           }
 
           // Стиль кастомного кола (коли ВИБРАНО)
-          &:checked + .custom-radio {
+          &:checked+.custom-radio {
             background-color: #d4af37;
 
             // Біла крапка всередині
@@ -152,11 +174,13 @@
         }
       }
     }
+
     .row {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       margin-top: 40px;
+
       button {
         display: flex;
         flex-direction: row;
@@ -166,9 +190,10 @@
         border: none;
         cursor: pointer;
       }
-      .next {
-      }
+
+      .next {}
     }
+
     &.modal1 {
       .row {
         .but1 {
@@ -176,17 +201,21 @@
         }
       }
     }
+
     &.modal5 {
       width: 466px;
+
       .center {
         display: flex;
         flex-direction: column;
         align-items: center;
       }
+
       h2 {
         text-align: center;
         margin: 0;
       }
+
       p {
         font-weight: 500;
         font-style: Medium;
@@ -195,6 +224,7 @@
         letter-spacing: 0%;
         text-align: center;
         color: #d9d9d9;
+        margin: 0;
       }
     }
   }

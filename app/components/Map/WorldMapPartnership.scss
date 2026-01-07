@@ -79,12 +79,16 @@
     display: flex;
     left: 33%;
     top: 70%;
+    align-items: center;
+    z-index: 5;
     .text-span {
       position: relative;
+      z-index: 3;
       span {
         top: 57%;
         margin-left: 15px;
         position: absolute;
+        z-index: 3;
         font-weight: 500;
         font-style: Medium;
         font-size: 10px;
@@ -104,6 +108,39 @@
       bottom: 0;
       transform: scale(0.7);
     }
+  }
+
+  .getOfferCircle {
+    position: relative;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 10px;
+      border-radius: inherit;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    svg {
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .getOfferWrapper:hover .getOfferCircle::before,
+  .getOfferWrapper:focus-visible .getOfferCircle::before {
+    opacity: 1;
   }
 
   .getOffer {

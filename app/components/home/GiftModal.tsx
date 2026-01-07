@@ -7,6 +7,7 @@ import GiftSVG from '../../assest/Main/Gift.svg';
 import LeftLogo from '../../assest/Main/leftLogo.svg';
 import './GiftModal.scss';
 import { MdArrowRightAlt } from 'react-icons/md';
+import { FaTimes } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import {
   openOrCloseModal,
@@ -56,11 +57,21 @@ const GiftModal = (props: Props) => {
           <div
             onClick={(e) => {
               e.stopPropagation();
-              e.preventDefault;
-              return false;
+              e.preventDefault();
             }}
             className="gift-modal"
           >
+            <button
+              type="button"
+              className="gift-modal-close"
+              aria-label="Close"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
+            >
+              <FaTimes size={20} />
+            </button>
             <div className="gift-svg">
               <GiftSVG />
             </div>

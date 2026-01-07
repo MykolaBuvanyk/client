@@ -60,7 +60,9 @@ const WorldMapPartnership: React.FC<Props> = ({ dictionary }) => {
             <div className="text-span">
               <span>get an offer</span>
             </div>
-            <GetOffer />
+            <div className="getOfferCircle" aria-hidden="true">
+              <GetOffer />
+            </div>
           </Link>
         </div>
       </div>

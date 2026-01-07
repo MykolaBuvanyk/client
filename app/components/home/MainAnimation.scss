@@ -167,6 +167,38 @@
     top: 26%;
     left: 0;
     z-index: 5;
+    display: block;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 50%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      /* keep blur inside the inner circle (SVG inner ring is offset ~10px) */
+      inset: 10px;
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 200ms ease;
+      z-index: 0;
+
+      /* hover blur (10–15% intensity via opacity) */
+      background: rgba(255, 255, 255, 0.12);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+
+      pointer-events: none;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    svg {
+      position: relative;
+      z-index: 1;
+    }
+
     span {
       position: absolute;
       top: 54%;
