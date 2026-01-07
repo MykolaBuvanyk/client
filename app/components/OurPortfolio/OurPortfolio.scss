@@ -41,13 +41,13 @@ $gold: #d4af37;
       background-color: transparent;
       height: 60px;
       cursor: pointer;
+      box-sizing: border-box;
       transition: 0.3s;
 
       &:hover {
         background: $gold;
         color: #000;
-        border-color: $gold;
-        border: none;
+        border-color: transparent;
       }
     }
     @media (max-width: 768px) {

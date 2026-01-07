@@ -2,7 +2,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './WhyIt.scss';
 import { FaArrowRightLong } from 'react-icons/fa6';
-import Utils from '../../assest/WhyIt/Main.svg';
 import SVG1 from '../../assest/WhyIt/WhyIt1.svg';
 import SVG2 from '../../assest/WhyIt/WhyIt2.svg';
 import SVG3 from '../../assest/WhyIt/WhyIt3.svg';
@@ -68,9 +67,7 @@ const WhyIt = ({ dictionary }: Props) => {
         <h2>{dictionary.title}</h2>
         <button onClick={() => router.push('#contacts')}>
           {dictionary.button}
-          <div className="svg">
-            <FaArrowRightLong color="#FFFFFF" />
-          </div>
+          <FaArrowRightLong className="svg" color="#FFFFFF" />
         </button>
       </div>
 
@@ -100,7 +97,21 @@ const WhyIt = ({ dictionary }: Props) => {
                 <Icon />
               </div>
               <div className="svg-utils">
-                <Utils />
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.75 0.75H10.75M10.75 0.75V10.75M10.75 0.75L0.75 10.75"
+                    stroke="white"
+                    strokeWidth={1.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </div>
             </div>
 

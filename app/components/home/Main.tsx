@@ -24,9 +24,7 @@ const Main = ({ dictionary }: Props) => {
             <div className="row">
               <button onClick={() => router.push('#contacts')}>
                 <span>{dictionary.button}</span>
-                <div className="svg">
-                  <MdArrowRightAlt size={24} />
-                </div>
+                <MdArrowRightAlt className="svg" size={24} />
               </button>
               <GiftModal />
             </div>
