@@ -15,6 +15,7 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
   const scrollRef = useRef<HTMLUListElement>(null);
   const [activeDot, setActiveDot] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
+  const touchStartXRef = useRef<number | null>(null);
 
   const projects = [
     { name: 'DUAA', url: 'https://duaa.dstepanoff.org.ua/' },
@@ -64,6 +65,7 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
   };
 
   const scrollToIndex = (dotIndex: number) => {
+    if (dotsCount <= 1) return;
     if (scrollRef.current) {
       const { scrollWidth, clientWidth } = scrollRef.current;
       const maxScrollLeft = scrollWidth - clientWidth;
@@ -75,6 +77,41 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
         left: targetScroll,
         behavior: 'smooth',
       });
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLUListElement>) => {
+    if (typeof window === 'undefined') return;
+    if (window.innerWidth > 1150) return;
+    touchStartXRef.current = e.touches[0]?.clientX ?? null;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLUListElement>) => {
+    if (typeof window === 'undefined') return;
+    if (window.innerWidth > 1150) return;
+    if (dotsCount <= 1) return;
+
+    const startX = touchStartXRef.current;
+    touchStartXRef.current = null;
+    if (startX == null) return;
+
+    const endX = e.changedTouches[0]?.clientX;
+    if (endX == null) return;
+
+    const delta = startX - endX;
+    const threshold = 35;
+    if (Math.abs(delta) < threshold) return;
+
+    const lastIndex = dotsCount - 1;
+    const isSwipeNext = delta > 0;
+
+    if (isSwipeNext && activeDot >= lastIndex) {
+      scrollToIndex(0);
+      return;
+    }
+
+    if (!isSwipeNext && activeDot <= 0) {
+      scrollToIndex(lastIndex);
     }
   };
 
@@ -126,6 +163,8 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
           className="portfolio-slider"
           ref={scrollRef}
           onScroll={handleScroll}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {projects.map((item, index) => (
             <li key={index} className="portfolio-item">
@@ -160,13 +199,23 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
           >
             {activeDot === index ? (
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <circle cx="8" cy="8" r="5" fill="url(#grad1)" />
+                <circle
+                  cx="8"
+                  cy="8"
+                  r="5"
+                  fill={`url(#portfolio-grad1-${index})`}
+                />
 
-                <circle cx="8" cy="8" r="7.5" stroke="url(#grad2)" />
+                <circle
+                  cx="8"
+                  cy="8"
+                  r="7.5"
+                  stroke={`url(#portfolio-grad2-${index})`}
+                />
 
                 <defs>
                   <linearGradient
-                    id="grad1"
+                    id={`portfolio-grad1-${index}`}
                     x1="3"
                     y1="8"
                     x2="13"
@@ -179,7 +228,7 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
                   </linearGradient>
 
                   <linearGradient
-                    id="grad2"
+                    id={`portfolio-grad2-${index}`}
                     x1="0"
                     y1="8"
                     x2="16"
@@ -200,6 +249,13 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
           </span>
         ))}
       </div>
+
+      <button
+        onClick={() => router.push('#contacts')}
+        className="contact-btn mobile-contact-btn"
+      >
+        {dictionary.button} <FaArrowRightLong />
+      </button>
     </section>
   );
 };
