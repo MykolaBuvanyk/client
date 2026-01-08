@@ -6,6 +6,41 @@ $gold: #d4af37;
   @include responsive-width;
   @include margin-page;
 
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0 25px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #d9d9d9;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    height: 60px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: 0.3s;
+    
+
+    &:hover {
+      background: $gold;
+      color: #000;
+      border-color: transparent;
+    }
+  }
+
+  @media (max-width: 1150px) {
+    .contact-btn{
+      justify-content: space-between;
+      width: 100%;
+    }
+    .contact-btn:hover {
+      background: transparent;
+      color: #d9d9d9;
+      border-color: #ffffff;
+    }
+  }
+
   .row {
     display: flex;
     justify-content: space-between;
@@ -30,28 +65,21 @@ $gold: #d4af37;
     }
 
     .contact-btn {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      padding: 0 25px;
-      font-weight: 600;
-      font-size: 15px;
-      color: #d9d9d9;
-      border: 2px solid #ffffff;
-      background-color: transparent;
-      height: 60px;
-      cursor: pointer;
-      box-sizing: border-box;
-      transition: 0.3s;
-
-      &:hover {
-        background: $gold;
-        color: #000;
-        border-color: transparent;
+      @media (max-width: 1150px) {
+        display: none;
       }
     }
     @media (max-width: 768px) {
       margin-bottom: 10px;
+    }
+  }
+
+  .mobile-contact-btn {
+    display: none;
+    margin: 20px auto 0;
+
+    @media (max-width: 1150px) {
+      display: flex;
     }
   }
 
@@ -175,6 +203,30 @@ $gold: #d4af37;
           }
         }
 
+        @media (max-width: 1150px) {
+          .item-title,
+          .item-category,
+          .visit-btn {
+            opacity: 1;
+            transform: none;
+          }
+
+          .visit-btn:hover {
+            background: $gold;
+            color: #000;
+            border-color: transparent;
+          }
+
+          &:hover {
+            .image-wrapper {
+              transform: none;
+            }
+            .beck-blur {
+              opacity: 0;
+            }
+          }
+        }
+
         &:hover {
           @media (min-width: 1025px) {
             .image-wrapper {
@@ -226,6 +278,14 @@ $gold: #d4af37;
         border-color: #ffffff !important;
         color: #ffffff !important;
       }
+    }
+  }
+
+  @media (max-width: 1150px) {
+    .nav-arrow.active:hover {
+      background: rgba(0, 0, 0, 0.6) !important;
+      border-color: $gold !important;
+      color: $gold !important;
     }
   }
 }

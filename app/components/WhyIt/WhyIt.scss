@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px;
-    @media (max-width: 1024px) {
+    @media (max-width: 1150px) {
       flex-direction: column;
     }
 
@@ -19,8 +19,9 @@
       color: #d4af37;
       margin: 0;
       margin-bottom: 20px;
-      @media (max-width: 768px) {
+      @media (max-width: 1150px) {
         font-size: 22px;
+        max-width: 80%;
       }
     }
 
@@ -41,7 +42,7 @@
       box-sizing: border-box;
       transition: 0.3s;
 
-      @media (max-width: 1024px) {
+      @media (max-width: 1150px) {
         display: none;
       }
 
@@ -63,12 +64,12 @@
     list-style: none;
     padding: 0;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1150px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1150px) {
       display: flex; // Повертаємо flex для слайдера
       overflow-x: auto;
       scroll-snap-type: x mandatory;
@@ -91,7 +92,7 @@
       overflow: hidden;
       cursor: pointer;
 
-      @media (max-width: 768px) {
+      @media (max-width: 1150px) {
         min-width: 100%; // Слайд на всю ширину
         scroll-snap-align: start;
         border: none; // Опціонально для слайдера
@@ -124,6 +125,20 @@
           position: absolute;
           top: 10px;
           left: 10px;
+
+          @media (max-width: 1150px) {
+            width: 40px;
+            height: 40px;
+            overflow: visible;
+
+            svg {
+              width: 50px;
+              height: 50px;
+              display: block;
+              transform: scale(0.8);
+              transform-origin: top left;
+            }
+          }
         }
         .svg-utils {
           position: absolute;
@@ -139,7 +154,10 @@
           transition:
             background 0.3s ease,
             border-color 0.3s ease;
-
+          @media (max-width: 1150px) {
+            width: 40px;
+            height: 40px;
+          }
           svg {
             display: block;
           }
@@ -149,14 +167,16 @@
       .text {
         padding: 10px 25px;
         h3 {
-          font-size: 17px;
+          font-size: 18px;
           text-transform: uppercase;
           color: #d4af37;
           transition: 0.3s;
+          margin: 0;
         }
         p {
           font-size: 14px;
           color: #d9d9d9;
+          margin: 8px 0;
         }
       }
 
@@ -178,33 +198,43 @@
           fill: #ffffff;
         }
       }
+
+      @media (max-width: 1150px) {
+        &:hover {
+          .bg-video {
+            transform: none;
+            opacity: 0.3;
+          }
+          h3 {
+            color: #d4af37;
+          }
+          .svg-utils {
+            background: #d4af37;
+          }
+          .svg-utils path {
+            stroke: revert;
+          }
+          .svg path {
+            fill: revert;
+          }
+        }
+      }
     }
   }
 
   .slider-dots {
     display: none;
-    @media (max-width: 768px) {
+    @media (max-width: 1150px) {
       display: flex;
       justify-content: center;
       gap: 12px;
-      margin-top: 25px;
+      margin-top: 35px;
     }
 
     .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #444;
       cursor: pointer;
-      transition: 0.3s;
-      border: 1px solid transparent;
-
-      &.active {
-        background: #d4af37;
-        box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
-        transform: scale(1.2);
-        border-color: #ffda63;
-      }
+      display: flex;
+      align-items: center;
     }
   }
 }
