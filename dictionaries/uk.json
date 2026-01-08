@@ -204,6 +204,8 @@
   },
   "modal2": {
     "title": "What are your terms?",
+    "week": "Up to 1 week",
+    "2-3weeks": "From 2 to 3 weeks",
     "1-2": "From 1 to 2 months",
     "2-3": "From 2 to 3 months",
     "4": "From 4 months",

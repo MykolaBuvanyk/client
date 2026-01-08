@@ -62,7 +62,7 @@ const Modal4 = ({ beck, next, close, name, phone, email, setValue }: Props) => {
           >
             {t('modal4.but')}
             <div className="svg">
-              <FaArrowRightLong color="#0C0C0C" />
+              <FaArrowRightLong />
             </div>{' '}
           </button>
         </div>

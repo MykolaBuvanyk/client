@@ -81,7 +81,7 @@ const Modal5 = ({ finish, close }: Props) => {
             Back to main page
           </p>
           <div className="svg">
-            <FaArrowRightLong color="#000000" />
+            <FaArrowRightLong />
           </div>
         </div>
       </div>

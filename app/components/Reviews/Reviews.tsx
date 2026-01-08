@@ -10,15 +10,24 @@ type Props = {
   dictionary: any;
 };
 
-const listReview = [1, 2]; // Ваші дані
+type ReviewData = {
+  name: string;
+  role: string;
+};
+
+const listReview: ReviewData[] = [
+  { name: 'Mark', role: 'Business owner' },
+  { name: 'Anneris', role: 'Business owner' },
+];
 
 type ReviewProps = {
   index: number;
+  review: ReviewData;
   isActive: boolean;
   onPlay: (index: number) => void;
 };
 
-const Review = ({ index, isActive, onPlay }: ReviewProps) => {
+const Review = ({ index, review, isActive, onPlay }: ReviewProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -67,8 +76,8 @@ const Review = ({ index, isActive, onPlay }: ReviewProps) => {
         </div>
 
         <div className="col">
-          <h3>Max Orlov</h3>
-          <p>Software Engineer</p>
+          <h3>{review.name}</h3>
+          <p>{review.role}</p>
         </div>
       </div>
     </li>
@@ -151,10 +160,11 @@ const Reviews = ({ dictionary }: Props) => {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {listReview.map((_, index) => (
+        {listReview.map((review, index) => (
           <Review
             key={index}
             index={index}
+            review={review}
             isActive={activeIndex === index}
             onPlay={handlePlay}
           />

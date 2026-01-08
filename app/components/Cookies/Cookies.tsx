@@ -56,7 +56,7 @@ const Cookies = ({ lang }: { lang: Locale }) => {
           >
             {t('cookies.reject')}
             <div className="svg">
-              <FaArrowRightLong color="#D9D9D9" />
+              <FaArrowRightLong color="#ffffff" />
             </div>
           </button>
         </div>

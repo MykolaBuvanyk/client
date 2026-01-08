@@ -29,6 +29,28 @@ const Modal2 = ({ next, beck, close, setValue, value }: Props) => {
           <input
             type="radio"
             name="modal2_option"
+            value="week"
+            checked={value === 'week'}
+            onChange={handleChange}
+          />
+          <span className="custom-radio"></span>
+          {t('modal2.week')}
+        </label>
+        <label className="value">
+          <input
+            type="radio"
+            name="modal2_option"
+            value="2-3weeks"
+            checked={value === '2-3weeks'}
+            onChange={handleChange}
+          />
+          <span className="custom-radio"></span>
+          {t('modal2.2-3weeks')}
+        </label>
+        <label className="value">
+          <input
+            type="radio"
+            name="modal2_option"
             value="1-2"
             checked={value === '1-2'}
             onChange={handleChange}

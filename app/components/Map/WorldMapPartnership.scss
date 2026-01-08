@@ -92,9 +92,10 @@
       opacity: 0;
       transition: opacity 200ms ease;
       z-index: 0;
-      background: rgba(255, 255, 255, 0.12);
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
+      background: rgba(212, 175, 55, 0.15);
+      -webkit-backdrop-filter: blur(4px);
+      
+      backdrop-filter: blur(4px);
       pointer-events: none;
     }
 

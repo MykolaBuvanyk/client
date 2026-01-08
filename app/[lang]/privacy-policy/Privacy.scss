@@ -54,7 +54,7 @@
         font-size: 15px;
         line-height: 130%;
         letter-spacing: 0%;
-        color: #d9d9d9;
+        color: #ffffff;
         counter-increment: my-counter; // Збільшуємо лічильник на кожному li
 
         &::before {
@@ -91,7 +91,7 @@
     font-size: 15px;
     line-height: 130%;
     letter-spacing: 0%;
-    color: #d9d9d9;
+    color: #ffffff;
   }
   span {
     font-weight: 500;
@@ -107,7 +107,7 @@
     font-size: 22px;
     line-height: 130%;
     letter-spacing: 0%;
-    color: #d9d9d9;
+    color: #ffffff;
   }
 
   a {
