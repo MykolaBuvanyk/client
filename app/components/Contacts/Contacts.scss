@@ -1,3 +1,33 @@
+
+.success-toast {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #FFFFFF1A;
+  border: 1px solid #D4AF371A;
+  color: #ffffff;
+  border-radius: 30px;
+  font-size: 13px;
+  padding: 15px 15px;
+  min-width: 0;
+  flex: 1 1 0;
+  width: 100%;
+  z-index: 10;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.success-toast > span {
+  margin-right: 0 !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { opacity: 0; }
+}
 @import '../../[lang]/app.scss';
 
 .contacts-container {
@@ -163,7 +193,7 @@
             border-radius: 15px;
             overflow: hidden;
             cursor: pointer;
-
+            border: 1px solid transparent;
             &:hover {
               border: 1px solid #ffda63;
 

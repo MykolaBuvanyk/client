@@ -195,6 +195,7 @@ const MainAnimation = (props: Props) => {
         className="mini-get-offer"
       >
         <GetOffer style={{ cursor: 'pointer' }} />
+        <span className="miniGetOffer">GET AN OFFER</span>
       </Link>
       <div className="beck1">
         <Beck />

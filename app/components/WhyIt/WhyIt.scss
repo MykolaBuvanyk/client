@@ -47,8 +47,8 @@
       }
 
       &:hover {
-        border-color: transparent;
-
+        border-image: linear-gradient(90deg, #d4af37 0%, #ffda63 100%) 1;
+        border-color: #d4af37; /* fallback for old browsers */
         background: linear-gradient(90deg, #d4af37 0%, #ffda63 100%);
         color: #000;
         .svg path {

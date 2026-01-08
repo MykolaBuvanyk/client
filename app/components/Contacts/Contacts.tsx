@@ -30,17 +30,15 @@ const Contacts = ({ lang }: Props) => {
     selectSocial: '',
   });
 
+  /*
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!formData.email && !formData.phone) {
       alert('Please provide either an email address or a phone number.');
       return;
     }
-
     const TG_TOKEN = process.env.NEXT_PUBLIC_TG_TOKEN;
     const TG_CHAT = process.env.NEXT_PUBLIC_TG_CHAT;
-
     // Формуємо текст повідомлення
     const message = `
 Нова заявка:
@@ -51,7 +49,6 @@ Email: ${formData.email || '-'}
 Соцмережа: ${formData.selectSocial || '-'}
 Приватність: ${formData.privacy ? 'Так' : 'Ні'}
   `;
-
     try {
       const res = await axios.post(
         `https://api.telegram.org/bot${TG_TOKEN}/sendMessage`,
@@ -60,7 +57,6 @@ Email: ${formData.email || '-'}
           text: message,
         },
       );
-
       if (res.data.ok) {
         setFormData({
           name: '',
@@ -75,6 +71,16 @@ Email: ${formData.email || '-'}
       console.error(error);
       alert('Сталася помилка при надсиланні в Telegram ❌');
     }
+  };
+  */
+
+  // --- MOCK SUBMIT: показуємо сповіщення, якщо всі поля валідні ---
+  const [showSuccess, setShowSuccess] = useState(false);
+  const handleFakeSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.privacy || !formData.name || !formData.interests || !isContactValid) return;
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 4000);
   };
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
@@ -110,7 +116,8 @@ Email: ${formData.email || '-'}
   return (
     <div id="contacts" className="contacts-container">
       <div className="form-container">
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}> */}
+        <form onSubmit={handleFakeSubmit}>
           <h2>Contact us for a quote</h2>
 
           <div className="row">
@@ -187,14 +194,21 @@ Email: ${formData.email || '-'}
             selectSocial={formData.selectSocial}
           />
 
-          <div className="row-but">
+          <div className="row-but" style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
             <button type="submit" className="but-1">
               Submit an application{' '}
-              <div className="svg">
-                <FaArrowRightLong color="#FFFFFF" />
-              </div>
+              <FaArrowRightLong color="#FFFFFF" />
             </button>
-            {/* Кнопка подяки зазвичай з'являється після успішного сабміту, тут вона просто для стилю */}
+            {showSuccess && (
+              <div className="success-toast">
+                <span style={{marginRight: '10px', fontSize: '18px'}}>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.70045 15.75C7.83211 15.978 8.02146 16.1674 8.24949 16.299C8.47751 16.4306 8.73616 16.4999 8.99945 16.4999C9.26274 16.4999 9.5214 16.4306 9.74942 16.299C9.97744 16.1674 10.1668 15.978 10.2985 15.75M2.44595 11.4945C2.34798 11.6019 2.28332 11.7354 2.25984 11.8789C2.23637 12.0223 2.25509 12.1695 2.31373 12.3025C2.37237 12.4356 2.4684 12.5487 2.59014 12.6281C2.71188 12.7075 2.85409 12.7499 2.99945 12.75H14.9995C15.1448 12.7501 15.287 12.7079 15.4089 12.6286C15.5307 12.5493 15.6268 12.4363 15.6856 12.3034C15.7444 12.1705 15.7633 12.0233 15.74 11.8798C15.7167 11.7364 15.6523 11.6028 15.5545 11.4952C14.557 10.467 13.4995 9.37425 13.4995 6C13.4995 4.80653 13.0253 3.66193 12.1814 2.81802C11.3375 1.97411 10.1929 1.5 8.99945 1.5C7.80598 1.5 6.66139 1.97411 5.81747 2.81802C4.97356 3.66193 4.49945 4.80653 4.49945 6C4.49945 9.37425 3.4412 10.467 2.44595 11.4945Z" stroke="#D9D9D9" stroke-width="1.5"/>
+                    </svg>
+                  </span>
+                Thank you! Your message has been successfully sent.
+              </div>
+            )}
           </div>
         </form>
       </div>

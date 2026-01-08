@@ -83,6 +83,8 @@
     overflow: hidden;
     isolation: isolate;
     border-radius: 50%;
+    width: fit-content;
+    height: fit-content;
 
     &::before {
       content: '';
@@ -108,6 +110,21 @@
       position: relative;
       z-index: 1;
       display: block;
+    }
+
+    .miniGetOffer {
+      position: absolute;
+      left: 50%;
+      top: 59%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
     }
     @media (max-width: 768px) {
       bottom: 0;

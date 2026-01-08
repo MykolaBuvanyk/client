@@ -57,7 +57,8 @@ const WorldMapPartnership: React.FC<Props> = ({ dictionary }) => {
             );
           })}
           <Link href={`#contacts`} className={'getOfferWrapper'}>
-            <GetOffer />
+            <GetOffer aria-hidden="true" />
+            <span className={'miniGetOffer'}>GET AN OFFER</span>
           </Link>
         </div>
       </div>
