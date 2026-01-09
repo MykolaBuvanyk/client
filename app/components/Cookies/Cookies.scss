@@ -23,7 +23,6 @@
       font-weight: 400;
       font-style: Regular;
       font-size: 15px;
-      leading-trim: NONE;
       line-height: 130%;
       letter-spacing: 0%;
       color: #ffffff;
@@ -71,16 +70,34 @@
         height: 60px;
         box-sizing: border-box;
         cursor: pointer;
+        border: 2px solid transparent; // preserve size on hover
+        transition: all 0.3s ease;
+        color: inherit;
       }
       .accept {
         background: linear-gradient(90deg, #d4af37 0%, #ffda63 100%);
-        border: none;
-        color: #0c0c0c99;
+        border: 2px solid transparent;
+        border-image: linear-gradient(90deg, #d4af37 0%, #ffda63 100%) 1;
+        color: #0c0c0c;
+
+        &:hover {
+          background: transparent;
+          border: 2px solid #ffffff;
+          border-image: none;
+          color: #ffffff;
+        }
       }
       .reject {
         background-color: transparent;
         border: 2px solid #ffffff;
         color: #ffffff;
+
+        &:hover {
+          background: linear-gradient(90deg, #d4af37 0%, #ffda63 100%);
+          border: 2px solid transparent;
+          border-image: linear-gradient(90deg, #d4af37 0%, #ffda63 100%) 1;
+          color: #0c0c0c;
+        }
       }
     }
   }
