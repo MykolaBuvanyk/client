@@ -19,6 +19,10 @@
   @media (max-width: 768px) {
     zoom: 0.6;
   }
+  @media (max-width: 500px) {
+    --small-circles-shift-x: -10px;
+    --small-circles-shift-y: 15px;
+  }
   .big-circle {
     position: absolute;
     left: 25%;
@@ -41,6 +45,45 @@
     &.elem-spin3 {
       top: 40%;
       left: 80%;
+    }
+
+    @media (max-width: 500px) {
+      /* main container uses zoom: 0.6 on small screens; set size so the *visible* svg width is 52px */
+      &:not(.elem-spin2):not(.elem-spin3) {
+        /* slight nudge down/right (compensates for zoom: 0.6 -> visible shift is smaller) */
+        transform: translate(50px, 20px);
+
+        .spin {
+          > svg {
+            width: 86.6667px; /* 52 / 0.6 */
+            height: auto;
+            display: block;
+            overflow: visible;
+          }
+        }
+      }
+
+      &.elem-spin2 {
+        /* a bit lower + more left on mobile */
+        transform: translate(-10px, 25px);
+
+        /* target ~70px visible width under parent zoom: 0.6 */
+        .spin {
+          transform: scale(1.0234); /* 70 / (114 * 0.6) */
+          transform-origin: 0 0;
+        }
+      }
+
+      &.elem-spin3 {
+        /* a bit lower + more left on mobile */
+        transform: translate(-12px, -5px);
+
+        /* target ~60px visible width under parent zoom: 0.6 */
+        .spin {
+          transform: scale(0.8772); /* 60 / (114 * 0.6) */
+          transform-origin: 0 0;
+        }
+      }
     }
     .spin {
       position: relative;
@@ -139,6 +182,12 @@
     position: absolute;
     top: 52%;
     left: 11%;
+
+    @media (max-width: 500px) {
+      /* move same as `.the-smoll-circle` */
+      transform: translate(var(--small-circles-shift-x), var(--small-circles-shift-y));
+    }
+
     img {
       width: 12%;
       height: auto;
@@ -148,6 +197,11 @@
     position: absolute;
     top: 62%;
     left: 21%;
+
+    @media (max-width: 500px) {
+      transform: translate(var(--small-circles-shift-x), var(--small-circles-shift-y));
+    }
+
     img {
       width: 7.5%;
       height: auto;
@@ -157,6 +211,12 @@
     position: absolute;
     top: 19%;
     left: 72%;
+
+    @media (max-width: 500px) {
+      /* move a bit left and up on mobile */
+      transform: translate(-20px, -20px);
+    }
+
     img {
       width: 60%;
       height: auto;
@@ -168,6 +228,8 @@
     left: 0;
     z-index: 5;
     display: block;
+    width: 140px;
+    height: 140px;
     overflow: hidden;
     isolation: isolate;
     border-radius: 50%;
@@ -196,6 +258,10 @@
     svg {
       position: relative;
       z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
     }
 
     .miniGetOffer {
@@ -211,9 +277,63 @@
       text-align: center;
       text-transform: uppercase;
       color: #ffffff;
-      white-space: nowrap;
       width: 110px;
       z-index: 6;
+    }
+
+    @media (max-width: 500px) {
+      /* main container uses zoom: 0.6 on small screens; compensate so the *visible* size becomes 64x64 */
+      width: 106.6667px; /* 64 / 0.6 */
+      height: 106.6667px;
+
+      /* the SVG contains a foreignObject with negative offsets; don't clip it */
+      overflow: visible;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* move the button right + down on mobile */
+      transform: translate(24px, 24px);
+
+      /* keep the icon fully visible inside the smaller circle */
+      svg {
+        width: 106.6667px;
+        height: 106.6667px;
+        flex: 0 0 106.6667px;
+
+        /* SVG has a foreignObject (-5..150) extending beyond the 140x140 viewBox; shrink content so nothing overflows */
+        transform: scale(0.7111); /* 140 / 150 */
+        transform-origin: 50% 50%;
+      }
+
+      /* nudge the arrow up to leave more room for text */
+      svg path {
+        transform: translateY(-8px);
+        transform-box: fill-box;
+        transform-origin: center center;
+      }
+
+      /* center the label inside the circle */
+      .miniGetOffer {
+        display: flex;
+        position: absolute;
+        inset: 0;
+        transform: translate(10px, 23px);
+        width: auto;
+        padding: 0 8px;
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        white-space: normal;
+
+        /* parent is zoom: 0.6, so bump font a bit for readability */
+        font-size: 12px;
+        line-height: 1.15;
+      }
+
+      &::before {
+        inset: 4px;
+      }
     }
   }
   .beck1 {
@@ -240,6 +360,12 @@
       text-align: center;
       vertical-align: middle;
       color: #ffffff;
+
+      /* nudge the arrow a bit up (only the arrow path exists in this SVG) */
+      svg path {
+        transform: translateY(-8px);
+        transform-box: fill-box;
+      }
       white-space: nowrap;
     }
     span {
