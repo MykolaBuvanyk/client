@@ -15,7 +15,6 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
   const scrollRef = useRef<HTMLUListElement>(null);
   const [activeDot, setActiveDot] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
-  const touchStartXRef = useRef<number | null>(null);
 
   const projects = [
     { name: 'DUAA', url: 'https://duaa.dstepanoff.org.ua/' },
@@ -65,7 +64,6 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
   };
 
   const scrollToIndex = (dotIndex: number) => {
-    if (dotsCount <= 1) return;
     if (scrollRef.current) {
       const { scrollWidth, clientWidth } = scrollRef.current;
       const maxScrollLeft = scrollWidth - clientWidth;
@@ -77,41 +75,6 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
         left: targetScroll,
         behavior: 'smooth',
       });
-    }
-  };
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLUListElement>) => {
-    if (typeof window === 'undefined') return;
-    if (window.innerWidth > 1150) return;
-    touchStartXRef.current = e.touches[0]?.clientX ?? null;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent<HTMLUListElement>) => {
-    if (typeof window === 'undefined') return;
-    if (window.innerWidth > 1150) return;
-    if (dotsCount <= 1) return;
-
-    const startX = touchStartXRef.current;
-    touchStartXRef.current = null;
-    if (startX == null) return;
-
-    const endX = e.changedTouches[0]?.clientX;
-    if (endX == null) return;
-
-    const delta = startX - endX;
-    const threshold = 35;
-    if (Math.abs(delta) < threshold) return;
-
-    const lastIndex = dotsCount - 1;
-    const isSwipeNext = delta > 0;
-
-    if (isSwipeNext && activeDot >= lastIndex) {
-      scrollToIndex(0);
-      return;
-    }
-
-    if (!isSwipeNext && activeDot <= 0) {
-      scrollToIndex(lastIndex);
     }
   };
 
@@ -163,8 +126,6 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
           className="portfolio-slider"
           ref={scrollRef}
           onScroll={handleScroll}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
         >
           {projects.map((item, index) => (
             <li key={index} className="portfolio-item">
@@ -179,9 +140,9 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
                 </div>
                 <div className="item-overlay">
                   <h3 className="item-title">{item.name}</h3>
-                  <span className="item-category">Website</span>
+                  <span className="item-category">{dictionary.website}</span>
                   <div className="visit-btn">
-                    Visit website <FaArrowRightLong />
+                    {dictionary.visitWebsite} <FaArrowRightLong />
                   </div>
                 </div>
                 <div className="beck-blur" />
@@ -250,12 +211,6 @@ const OurPortfolio = ({ dictionary }: { dictionary: any }) => {
         ))}
       </div>
 
-      <button
-        onClick={() => router.push('#contacts')}
-        className="contact-btn mobile-contact-btn"
-      >
-        {dictionary.button} <FaArrowRightLong />
-      </button>
     </section>
   );
 };

@@ -5,8 +5,13 @@ import { useState } from 'react';
 import GetOffer from '../../assest/Main/getOffer.svg';
 import Link from 'next/link';
 
+interface MapDict {
+  title: string;
+  getOffer: string;
+}
+
 type Props = {
-  dictionary: any;
+  dictionary: MapDict;
 };
 
 const countries = [
@@ -58,7 +63,7 @@ const WorldMapPartnership: React.FC<Props> = ({ dictionary }) => {
           })}
           <Link href={`#contacts`} className={'getOfferWrapper'}>
             <GetOffer aria-hidden="true" />
-            <span className={'miniGetOffer'}>GET AN OFFER</span>
+            <span className={'miniGetOffer'}>{dictionary.getOffer}</span>
           </Link>
         </div>
       </div>

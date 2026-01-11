@@ -3,18 +3,36 @@
 .footer-container {
   padding: 0;
   border-top: 1px solid #363636;
+
   @media (max-width: 768px) {
     padding-bottom: 30px;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    overflow-x: clip;
+  }
+
   .footer {
     display: flex;
     flex-direction: column;
+
     .up {
       @include responsive-width;
       padding: 30px 0;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+
+      @media (max-width: 768px) {
+        padding-bottom: 0px;
+        width: 100%;
+      }
+
       .logo-and-social {
         display: flex;
         flex-direction: row;
@@ -22,10 +40,14 @@
         width: 100%;
         align-items: center;
         gap: 10px;
+
         .languages {
           display: flex;
           flex-direction: row;
           gap: 15px;
+          @media (max-width: 768px) {
+            gap: 8px;
+          }
           a {
             font-weight: 300;
             font-style: Light;
@@ -36,38 +58,50 @@
             vertical-align: middle;
             color: #ffffff;
             text-decoration: none;
+            @media (max-width: 768px) {
+              font-size: 11px;
+              padding-top: 15px;
+              padding-bottom: 15px;
+            }
             &:hover {
               color: #d4af37;
             }
           }
         }
+
         .socials {
           display: flex;
           flex-direction: row;
           gap: 15px;
+
           svg {
             scale: 1.3;
             transition: transform 0.3s ease;
 
             // Стилізуємо path тільки при ховері на саме SVG
             &:hover {
+
               // Якщо у вас кілька path і треба змінити саме другий
               path:nth-child(2) {
                 fill: #d4af37;
                 transition: fill 0.3s ease;
               }
+
               path:nth-child(3) {
                 fill: #d4af37;
                 transition: fill 0.3s ease;
               }
+
               path:nth-child(4) {
                 fill: #d4af37;
                 transition: fill 0.3s ease;
               }
+
               path:nth-child(5) {
                 fill: #d4af37;
                 transition: fill 0.3s ease;
               }
+
               path:nth-child(6) {
                 fill: #d4af37;
                 transition: fill 0.3s ease;
@@ -75,6 +109,7 @@
             }
           }
         }
+
         @media (max-width: 1024px) {
           padding: 0;
           flex-direction: column;
@@ -86,6 +121,7 @@
             zoom: 0.4;
             padding-bottom: 30px;
           }
+
           .languages {
             order: 3;
             border-top: 1px solid #1e1e1e;
@@ -93,23 +129,32 @@
             width: 100%;
             flex-wrap: wrap;
           }
+
           .socials {
             order: 2;
           }
         }
       }
     }
+
     .down-container {
       border-top: 1px solid #1e1e1e;
+
       @media (max-width: 1024px) {
         border: none;
+        width: 100%;
       }
+
       .down {
         @include responsive-width;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 30px 0;
+        @media (max-width: 1024px) {
+          width: 100%;
+        }
+
         .languages {
           font-weight: 300;
           font-style: Light;
@@ -121,6 +166,7 @@
           color: #ffffff;
           text-decoration: none;
         }
+
         .info {
           font-weight: 400;
           font-style: Regular;
@@ -130,13 +176,18 @@
           text-align: right;
           color: #ffffff;
           text-decoration: none;
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
           &:hover {
             color: #d4af37;
           }
         }
+
         @media (max-width: 768px) {
           padding: 0;
           border: none;
+
           .languages {
             font-weight: 400;
             font-style: Regular;
@@ -145,14 +196,16 @@
             letter-spacing: 0%;
             color: #ffffff;
           }
+
           .info {
             position: absolute;
             right: 0;
-            top: 30px;
+            top: 33.5px;
           }
         }
       }
     }
+
     @media (max-width: 768px) {
       position: relative;
     }

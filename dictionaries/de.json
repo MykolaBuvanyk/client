@@ -103,5 +103,20 @@
     "Map": {
       "title": "customers from all over the world"
     }
+  },
+  "contacts": {
+    "title": "Contacts",
+    "form": {
+      "heading": "Contact us for a quote",
+      "name": "Your name",
+      "email": "Your email",
+      "phone": "Your phone number",
+      "interests": "Write down everything that interests you",
+      "emailPhoneRequired": "Email or Phone required",
+      "chooseWay": "Choose a convenient way to contact us",
+      "privacy": "I accept",
+      "privacyLink": "the Privacy Policy",
+      "submit": "Submit an application",
+      "success": "Thank you! Your message has been successfully sent."
+    }
   }
-}

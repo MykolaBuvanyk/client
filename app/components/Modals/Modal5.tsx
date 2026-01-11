@@ -6,9 +6,20 @@ import { useSelector } from 'react-redux';
 import SonSVG from '../../assest/Modal/sun.svg';
 import { FaArrowRightLong } from 'react-icons/fa6';
 
-type Props = { finish: any; close: any };
+interface Modal5Dict {
+  thankYou: string;
+  workingOnCalculation: string;
+  giftCredited: string;
+  backToMain: string;
+}
 
-const Modal5 = ({ finish, close }: Props) => {
+type Props = { 
+  finish: any; 
+  close: any;
+  dictionary: Modal5Dict;
+};
+
+const Modal5 = ({ finish, close, dictionary }: Props) => {
   const { t } = useTranslation();
   const { isPresent } = useSelector((state: RootState) => state.form);
   return (
@@ -20,9 +31,9 @@ const Modal5 = ({ finish, close }: Props) => {
         <div className="sun">
           <SonSVG />
         </div>
-        <h2>Thank you!</h2>
+        <h2>{dictionary.thankYou}</h2>
         <p>
-          We are already working on the calculation and will contact you shortly
+          {dictionary.workingOnCalculation}
         </p>
         {isPresent && (
           <button className="gift">
@@ -73,12 +84,12 @@ const Modal5 = ({ finish, close }: Props) => {
                 </linearGradient>
               </defs>
             </svg>
-            Gift credited successfully
+            {dictionary.giftCredited}
           </button>
         )}
         <div style={{ width: '100%' }} onClick={finish} className="finish">
           <p>
-            Back to main page
+            {dictionary.backToMain}
           </p>
           <div className="svg">
             <FaArrowRightLong />

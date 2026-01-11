@@ -6,6 +6,15 @@ $gold: #d4af37;
   @include responsive-width;
   @include margin-page;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    overflow-x: clip;
+  }
+
   .contact-btn {
     display: flex;
     align-items: center;
@@ -89,10 +98,17 @@ $gold: #d4af37;
     .portfolio-slider {
       display: flex;
       gap: 25px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      overscroll-behavior-x: contain;
 
       &::-webkit-scrollbar {
         display: none;
@@ -110,8 +126,11 @@ $gold: #d4af37;
           flex: 0 0 calc((100%) / 2); // Планшет (2 картки)
         }
 
-        @media (max-width: 500px) {
-          flex: 0 0 calc(100% + 30px); // Мобілка
+        @media (max-width: 650px) {
+          flex: 0 0 100%;
+          width: 100%;
+          max-width: 100%;
+          box-sizing: border-box;
         }
 
         .image-wrapper {

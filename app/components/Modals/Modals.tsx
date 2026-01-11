@@ -12,7 +12,20 @@ import { openOrCloseModal } from '@/app/store/reducers/formReducers';
 import Modal5 from './Modal5';
 import axios from 'axios';
 
-const Modals = () => {
+interface ModalsDict {
+  modal5: {
+    thankYou: string;
+    workingOnCalculation: string;
+    giftCredited: string;
+    backToMain: string;
+  };
+}
+
+type Props = {
+  dictionary: ModalsDict;
+};
+
+const Modals = ({ dictionary }: Props) => {
   const [selectModal, setSelectModal] = useState(1);
   const { isOpenModal, isPresent } = useSelector(
     (state: RootState) => state.form,
@@ -183,7 +196,7 @@ Email: ${formData.email || '-'}
                     }
                   />
                 )}
-                {selectModal === 5 && <Modal5 finish={finish} close={close} />}
+                {selectModal === 5 && <Modal5 finish={finish} close={close} dictionary={dictionary.modal5} />}
               </motion.div>
             </AnimatePresence>
           </div>

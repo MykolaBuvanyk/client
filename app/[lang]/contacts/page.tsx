@@ -19,7 +19,7 @@ const page = async ({ params: { lang } }: Props) => {
           listUrls={[{ name: contacts.title, url: 'contacts' }]}
         />
       </div>
-      <Contacts lang={lang} />
+      <Contacts lang={lang} dictionary={contacts} />
     </div>
   );
 };

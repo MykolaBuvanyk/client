@@ -95,13 +95,16 @@
     },
     "OurPortfolio": {
       "title": "our portfolio",
-      "button": "Tell us about your project"
+      "button": "Tell us about your project",
+      "website": "Website",
+      "visitWebsite": "Visit website"
     },
     "Reviews": {
       "title": "reviews"
     },
     "Map": {
-      "title": "customers from all over the world"
+      "title": "customers from all over the world",
+      "getOffer": "GET AN OFFER"
     }
   },
   "listScroll": [
@@ -227,7 +230,41 @@
     "but": "Send"
   },
   "contacts": {
-    "title": "Contacts"
+    "title": "Contacts",
+    "form": {
+      "heading": "Contact us for a quote",
+      "name": "Your name",
+      "email": "Your email",
+      "phone": "Your phone number",
+      "interests": "Write down everything that interests you",
+      "emailPhoneRequired": "Email or Phone required",
+      "chooseWay": "Choose a convenient way to contact us",
+      "privacy": "I accept",
+      "privacyLink": "the Privacy Policy",
+      "submit": "Submit an application",
+      "success": "Thank you! Your message has been successfully sent."
+    }
+  },
+  "giftModal": {
+    "gifts": [
+      "SEO optimization of the website",
+      "Website localization",
+      "Connecting Google Analytics"
+    ],
+    "title": "A free gift for your website",
+    "description": "Take your gift — and we will make your website more effective at no extra cost.",
+    "button": "Take your gift",
+    "closeAriaLabel": "Close"
+  },
+  "mainAnimation": {
+    "getOffer": "GET AN OFFER",
+    "websitesCount": "Number of websites developed"
+  },
+  "modal5": {
+    "thankYou": "Thank you!",
+    "workingOnCalculation": "We are already working on the calculation and will contact you shortly",
+    "giftCredited": "Gift credited successfully",
+    "backToMain": "Back to main page"
   },
   "toFormWhyIt": {
     "1": "Hello, I’m interested in a website on a 3-month installment plan 🚀 💸",

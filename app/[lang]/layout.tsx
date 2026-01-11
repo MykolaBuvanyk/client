@@ -52,7 +52,7 @@ export default async function RootLayout({
             <main>
               {children}
               <Cookies lang={lang} />
-              <Modals />
+              <Modals dictionary={{ modal5: dictionary.modal5 }} />
             </main>
             <footer>
               <Footer lang={lang} />

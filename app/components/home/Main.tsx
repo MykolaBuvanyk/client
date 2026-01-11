@@ -8,9 +8,11 @@ import { useRouter } from 'next/navigation';
 
 type Props = {
   dictionary: any;
+  giftModalDictionary: any;
+  mainAnimationDictionary: any;
 };
 
-const Main = ({ dictionary }: Props) => {
+const Main = ({ dictionary, giftModalDictionary, mainAnimationDictionary }: Props) => {
   const router = useRouter();
 
   return (
@@ -26,11 +28,11 @@ const Main = ({ dictionary }: Props) => {
                 <span>{dictionary.button}</span>
                 <MdArrowRightAlt className="svg" size={24} />
               </button>
-              <GiftModal />
+              <GiftModal dictionary={giftModalDictionary} />
             </div>
           </div>
         </div>
-        <MainAnimation />
+        <MainAnimation dictionary={mainAnimationDictionary} />
       </div>
     </div>
   );

@@ -18,19 +18,20 @@ type Props = {
 };
 
 const page = async ({ params: { lang } }: Props) => {
-  const { home } = await getDictionary(lang);
+  const dictionary = await getDictionary(lang);
+  const { home, contacts, giftModal, mainAnimation } = dictionary;
   const whyItDictionary = home.WhyIt;
 
   return (
     <div className="home-container">
-      <Main dictionary={home.main} />
+      <Main dictionary={home.main} giftModalDictionary={giftModal} mainAnimationDictionary={mainAnimation} />
       <EndlessScroll lang={lang} />
       <WhyIt dictionary={whyItDictionary} />
       <Services dictionary={home.Services} />
       <OurPortfolio dictionary={home.OurPortfolio} />
       <Reviews dictionary={home.Reviews} lang={lang} />
       <Map dictionary={home.Map} />
-      <Contacts lang={lang} />
+      <Contacts lang={lang} dictionary={contacts} />
       <Social />
     </div>
   );

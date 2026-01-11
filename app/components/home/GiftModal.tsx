@@ -14,9 +14,19 @@ import {
   setPresent,
 } from '@/app/store/reducers/formReducers';
 
-type Props = {};
+interface GiftModalDict {
+  gifts: string[];
+  title: string;
+  description: string;
+  button: string;
+  closeAriaLabel: string;
+}
 
-const GiftModal = (props: Props) => {
+type Props = {
+  dictionary: GiftModalDict;
+};
+
+const GiftModal = ({ dictionary }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const open = () => {
@@ -64,7 +74,7 @@ const GiftModal = (props: Props) => {
             <button
               type="button"
               className="gift-modal-close"
-              aria-label="Close"
+              aria-label={dictionary.closeAriaLabel}
               onClick={(e) => {
                 e.stopPropagation();
                 setIsOpen(false);
@@ -76,23 +86,18 @@ const GiftModal = (props: Props) => {
               <GiftSVG />
             </div>
             <ul>
-              {[
-                'SEO optimization of the website',
-                'Website localization',
-                'Connecting Google Analytics',
-              ].map((x) => (
+              {dictionary.gifts.map((x) => (
                 <li key={x}>
                   <LeftLogo /> {x}
                 </li>
               ))}
             </ul>
-            <h2>A free gift for your website</h2>
+            <h2>{dictionary.title}</h2>
             <p>
-              Take your gift — and we will make your website more effective at
-              no extra cost.
+              {dictionary.description}
             </p>
             <button onClick={getGift}>
-              Take your gift{' '}
+              {dictionary.button}{' '}
               <div className="svg">
                 <MdArrowRightAlt size={24} />
               </div>

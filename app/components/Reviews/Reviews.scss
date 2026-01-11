@@ -5,6 +5,15 @@
   @include margin-page;
   position: relative;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    overflow-x: clip;
+  }
+
   h2 {
     font-size: 46px;
     text-transform: uppercase;
@@ -24,6 +33,10 @@
     display: flex;
     gap: 15px;
     overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overscroll-behavior-x: contain;
     scrollbar-width: none; // Firefox
     &::-webkit-scrollbar {
       display: none;
@@ -44,7 +57,10 @@
       overflow: hidden;
 
       @media (max-width: 768px) {
-        width: 100%; // Мобілка: 1 слайд
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
         scroll-snap-align: start;
       }
 

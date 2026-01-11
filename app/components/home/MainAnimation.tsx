@@ -22,9 +22,16 @@ import ArrowsSVG from '../../assest/Main/spin/Arrows.svg';
 import SquareSVG from '../../assest/Main/spin/Square.svg';
 import Link from 'next/link';
 
-type Props = {};
+interface MainAnimationDict {
+  getOffer: string;
+  websitesCount: string;
+}
 
-const MainAnimation = (props: Props) => {
+type Props = {
+  dictionary: MainAnimationDict;
+};
+
+const MainAnimation = ({ dictionary }: Props) => {
   const [number, setNumber] = useState(1);
 
   useEffect(() => {
@@ -197,13 +204,13 @@ const MainAnimation = (props: Props) => {
         className="mini-get-offer"
       >
         <GetOffer style={{ cursor: 'pointer' }} />
-        <span className="miniGetOffer">GET AN OFFER</span>
+        <span className="miniGetOffer">{dictionary.getOffer}</span>
       </Link>
       <div className="beck1">
         <Beck />
       </div>
       <div className="num-web">
-        <p>Number of websites developed</p>
+        <p>{dictionary.websitesCount}</p>
         <span>{number} +</span>
       </div>
       <div className="beck2">

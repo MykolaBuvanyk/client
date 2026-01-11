@@ -21,10 +21,10 @@
       "titleList": "що ми використовуємо у роботі"
     },
     "urls": {
-      "services": "Services",
-      "portfolio": "Portfolio",
-      "reviews": "Reviews",
-      "contacts": "Contacts"
+      "/#services": "Services",
+      "/#portfolio": "Portfolio",
+      "/#reviews": "Reviews",
+      "/contacts": "Contacts"
     }
   },
   "footer": {
@@ -34,7 +34,7 @@
         "potrfolio": "Портфоліо"
       }
     },
-    "info": "© 2021-2025 «FULLSTACK-INNOVATIONS» Створення сайтів"
+    "info": "© 2023-2026 «FULLSTACK-INNOVATIONS» Website development"
   },
   "home": {
     "main": {
@@ -103,5 +103,156 @@
     "Map": {
       "title": "customers from all over the world"
     }
+  },
+  "listScroll": [
+    "Web development New York",
+    "Website development",
+    "Web design Los Angeles",
+    "Ecommerce development Chicago",
+    "Custom website development",
+    "Web development Toronto",
+    "Website development Vancouver",
+    "Web design Miami",
+    "Ecommerce website development",
+    "Web development San Francisco",
+    "Website development Austin",
+    "Web design Seattle",
+    "Ecommerce development Canada",
+    "Web development USA",
+    "Website development Los Angeles",
+    "Ecommerce development Toronto",
+    "Web development Chicago",
+    "Web design San Diego",
+    "Website development Dallas",
+    "Web development Boston",
+    "Ecommerce website development Miami",
+    "Web design Vancouver",
+    "Website development Montreal",
+    "Web development Calgary",
+    "Ecommerce development San Francisco",
+    "Web design Austin",
+    "Website development Seattle",
+    "Web development Canada",
+    "Ecommerce development USA"
+  ],
+  "privacy": {
+    "title": "Privacy & Cookie settings",
+    "desc1": "This Policy is an integral part of the User Agreement (hereinafter referred to as the “Agreement”) posted and/or available on the Internet at: <a href='/'>https://fullstack-innovation.com</a>, as well as other agreements concluded with the User, or agreements that may be concluded with the User.",
+    "desc2": "By using the services of the website, the User expresses his/her consent to the Personal Data Privacy Policy (hereinafter referred to as the Privacy Policy) and, of his/her own free will and in his/her own interests, gives written consent to the following methods of processing Personal Information: collection, recording, systematization, storage, clarification (updating, changing), extraction, use, transfer (distribution, provision, access), depersonalization, blocking, deletion, destruction for the purposes established by this Policy, using automation tools or without using such tools, at the discretion of the User. If you disagree with the terms of the Privacy Policy, you must stop using the site.",
+    "desc3": "The Privacy Policy applies to all personal information that the Site may obtain about you while using the site, programs, and products of the site.",
+    "miniTitle": "Purposes of collecting user personal information",
+    "desc4": "The personal data of the Customer/User may be used by the Website Owner for the following purposes:",
+    "ul1": [
+      "Providing the User with access to the resources of the Website.",
+      "Establishing feedback with the User, including phone calls, sending messages, requests regarding the use of the Site, providing services, processing requests and applications from the User, sending advertising information about promotions and other services of the Site.",
+      "Determining the User's location to ensure security and prevent fraud.",
+      "Confirmation of the accuracy and completeness of personal data provided by the User.",
+      "Providing the User with effective customer and technical support in case of problems related to the use of the Site.",
+      "Advertising activities on the Website.",
+      "Providing the User with access to the websites or services of the Site's partners for the purpose of obtaining products, updates, and services."
+    ],
+    "miniTitle2": "Collected information (Personal information)",
+    "desc5": "We collect the following information:",
+    "ul2": [
+      "Technical information automatically collected by the Website's software when you visit it.",
+      "Personal information provided by you when filling out the relevant form or information obtained by the Site through the User's use of social networks.",
+      "Other information is provided by the user at his discretion."
+    ],
+    "miniTitle3": "Technical information",
+    "p6": "When you visit the Site, information from standard server logs becomes automatically available to the Site administration. This includes your computer's IP address (or proxy server, if used to access the Internet), the name of your Internet service provider, domain name, browser and operating system type, information about the website/social media page from which you linked to the Site, the pages of the Site you visit, the dates and times of these visits, and files. This information is analyzed by us in an aggregated (anonymized) form to analyze the traffic of the Website and is used in developing proposals for its improvement and development. The connection between your IP address and your personal information is never disclosed to third parties, except in cases where it is required by law.",
+    "p7": "Technical information about visits to the Website (anonymized) is also collected by statistics counters installed on the Website.",
+    "p8": "For the purpose of concluding Agreements, the User may also provide the following personal data about himself or about the organization and its representatives on whose behalf he acts: first name, patronymic, last name, position, telephone number, additionally, the name, TIN, EDRPOU, registration address and postal address of such an organization, corporate telephone number, current account, name of the servicing bank may be provided. The above information about the organization does not belong to personal data.",
+    "p9": "If an individual acts as an individual entrepreneur or in his/her interests, at the request or with the direct written consent of such an individual entrepreneur, the following may also be provided: surname and initials of the individual entrepreneur, EDRPOU and mailing address, telephone number, current account, name of the servicing bank.",
+    "miniTitle4": "Responsibilities of the parties",
+    "p10": "The user is obliged to:",
+    "ul3": [
+      "Provide personal data necessary for using the Website under the Agreement or concluding the Contract.",
+      "Update and supplement the personal data provided in the event of any changes to this information."
+    ],
+    "p11": "The administration/representative of the Website/Website owner is obliged to:",
+    "ul4": [
+      "Use the information obtained solely for the purposes specified in this Privacy Policy.",
+      "Ensure the storage of confidential information, not disclose it without the prior written consent of the User, and not sell, exchange, publish, or disclose in any other way the personal data of the Client/User. The User's personal data may be transferred to authorized state authorities only on the grounds and in the manner established by law.",
+      "Take precautions to protect the confidentiality of the User's personal data in accordance with the procedure normally used to protect this type of information in existing business transactions.",
+      "Block personal data belonging to the relevant User from the moment of the User's request or inquiry, or that of their legal representative or authorized body for the protection of the rights of personal data subjects, for the period of verification in the event of the discovery of inaccurate personal data or unlawful actions."
+    ],
+    "p12": "Administration/representative Protection of information collected on the Website / The website owner is obliged to:",
+    "ul5": [
+      "The Website takes all necessary and sufficient organizational and technical precautions to protect the confidentiality of User data. Only those Website employees who need to perform work functions that require access to personal data have access to information about Users.",
+      "The User acknowledges that in the event of negligent treatment by the User of the secure storage of personal data that provides access to it, third parties may gain unauthorized access to it. The Website is not responsible for any damage caused by such access. We recommend that users use complex passwords consisting of numbers and letters."
+    ],
+    "miniTitle5": "Additional terms and conditions",
+    "p13": "The administration/representative of the Website/Website owner has the right to make changes to this Privacy Policy without the consent and without notifying the User. The User is responsible for reviewing the updated version of the Privacy Policy, which governs the rules for using the Website. Changes to the Privacy Policy take effect from the moment they are posted on the Site, unless otherwise provided by the new version of the Privacy Policy.",
+    "span": "The current version of the Policy is available on the Site, on the Internet at <a href='/'>https://fullstack-innovation.com</a>"
+  },
+  "cookies": {
+    "title": "Data improves your experience",
+    "desc": "To enhance your experience on our website and provide more relevant content, we use cookies and similar technologies, including both first-party and third-party cookies, as well as data sent directly from our servers. You can manage your preferences at any time in the <a href='/privacy-policy'>Privacy & Cookie Settings.</a>",
+    "miniTitle": "Strictly necessary (always on)",
+    "desc2": "Enables core functionality to support your language, region, and service preferences.",
+    "accept": "Accept all",
+    "reject": "Reject all"
+  },
+  "modal1": {
+    "title": "What type of website are you interested in?",
+    "landing": "Landing Page",
+    "corporate": "Corporate Site",
+    "online": "Online Store",
+    "other": "Other",
+    "forward": "Forward",
+    "beck": "Back"
+  },
+  "modal2": {
+    "title": "What are your terms?",
+    "week": "Up to 1 week",
+    "2-3weeks": "From 2 to 3 weeks",
+    "1-2": "From 1 to 2 months",
+    "2-3": "From 2 to 3 months",
+    "4": "From 4 months",
+    "forward": "Forward",
+    "beck": "Back"
+  },
+  "modal3": {
+    "title": "What is the main focus of your business?",
+    "place": "Write down everything that interests you",
+    "forward": "Forward",
+    "beck": "Back"
+  },
+  "modal4": {
+    "title": "Leave your contact details — we will tell you the price",
+    "place1": "Your name",
+    "place2": "Your phone",
+    "place3": "Your email",
+    "beck": "Back",
+    "but": "Send"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "form": {
+      "heading": "Contact us",
+      "name": "Your name",
+      "email": "Your email",
+      "phone": "Your phone number",
+      "interests": "Write down everything that interests you",
+      "emailPhoneRequired": "Email or Phone required",
+      "chooseWay": "Choose a convenient way to contact us",
+      "privacy": "I accept",
+      "privacyLink": "the Privacy Policy",
+      "submit": "Submit an application",
+      "success": "Thank you! Your message has been successfully sent."
+    }
+  },
+  "toFormWhyIt": {
+    "1": "Hello, I’m interested in a website on a 3-month installment plan 🚀 💸",
+    "2": "Hello, I’m interested in an optimized, fast website where pages load in seconds and everything works smoothly 💻 ⚡️",
+    "3": "Hello, I’m interested in website support: 3 months of free, reliable support with ongoing, responsive 24/7 communication 🛠️ 💬"
+  },
+  "serviceContact": {
+    "1": "Hello, I’m interested in a landing page — a single-page website with a simple structure, ideal for showcasing myself or my product/services. Timeline: 3–7 days. 🚀📄",
+    "2": "Hello, I’m interested in a corporate website — a multi-page site with a well-structured layout to present a company, its services, team, and achievements. Timeline: 12–20 days. 🏢🌐",
+    "3": "Hello, I’m interested in an online store — a multi-page website for selling products online, featuring a catalog, product pages, a shopping cart, and secure payment options. Timeline: 25–45 days. 🛒💳🌐",
+    "4": "Hello, I’m interested in a delivery website — a multi-page site with features for ordering and tracking the delivery of goods or services. Timeline: 7–15 days. 🚚📦🌐",
+    "5": "Hello, I’m interested in a business website — a multi-page site designed to present a business, its services, and contact information, with a focus on attracting clients and partners. Timeline: 10–20 days. 💼🌐",
+    "6": "Hello, I’m interested in mobile application development — software solutions for iOS and Android with an intuitive interface and user-friendly functionality. Timeline: 45–120 days. 📱🚀"
   }
 }

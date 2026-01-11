@@ -12,11 +12,28 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import axios from 'axios';
 
+interface ContactsDict {
+  form: {
+    heading: string;
+    name: string;
+    email: string;
+    phone: string;
+    interests: string;
+    emailPhoneRequired: string;
+    chooseWay: string;
+    privacy: string;
+    privacyLink: string;
+    submit: string;
+    success: string;
+  };
+}
+
 type Props = {
   lang: Locale;
+  dictionary: ContactsDict;
 };
 
-const Contacts = ({ lang }: Props) => {
+const Contacts = ({ lang, dictionary }: Props) => {
   const { interests: reduxInterests } = useSelector(
     (state: RootState) => state.form,
   );
@@ -118,11 +135,11 @@ Email: ${formData.email || '-'}
       <div className="form-container">
         {/* <form onSubmit={handleSubmit}> */}
         <form onSubmit={handleFakeSubmit}>
-          <h2>Contact us for a quote</h2>
+          <h2>{dictionary.form.heading}</h2>
 
           <div className="row">
-            <div className="value">
-              <label>Your name</label>
+            <div className={`value ${formData.name.trim() ? 'is-filled' : ''}`}>
+              <label>{dictionary.form.name}</label>
               <input
                 name="name"
                 required
@@ -131,12 +148,12 @@ Email: ${formData.email || '-'}
                 onChange={handleChange}
               />
             </div>
-            <div className="value">
-              <label>Your email</label>
+            <div className={`value ${formData.email.trim() ? 'is-filled' : ''}`}>
+              <label>{dictionary.form.email}</label>
               <input
                 name="email"
                 type="email"
-                placeholder={!isContactValid ? 'Email or Phone required' : ''}
+                placeholder={!isContactValid ? dictionary.form.emailPhoneRequired : ''}
                 value={formData.email}
                 onChange={handleChange}
                 required={!formData.phone} // HTML5 валідація, якщо телефону немає
@@ -144,22 +161,20 @@ Email: ${formData.email || '-'}
             </div>
           </div>
 
-          <div className="value">
-            <label className="lab2">Your phone number</label>
+          <div className={`value ${formData.phone.trim() ? 'is-filled' : ''}`}>
+            <label>{dictionary.form.phone}</label>
             <input
               name="phone"
               type="text"
-              placeholder={!isContactValid ? 'Email or Phone required' : ''}
+              placeholder={!isContactValid ? dictionary.form.emailPhoneRequired : ''}
               value={formData.phone}
               onChange={handleChange}
               required={!formData.email} // HTML5 валідація, якщо email немає
             />
           </div>
 
-          <div className="value">
-            <label className="lab2">
-              Write down everything that interests you
-            </label>
+          <div className={`value ${formData.interests.trim() ? 'is-filled' : ''}`}>
+            <label>{dictionary.form.interests}</label>
             <textarea
               name="interests"
               ref={textareaRef}
@@ -181,14 +196,14 @@ Email: ${formData.email || '-'}
               onChange={handleChange}
             />
             <label htmlFor="privacy">
-              I accept{' '}
+              {dictionary.form.privacy}{' '}
               <Link href={getLocalizedPath(`/${lang}/privacy`, lang)}>
-                the Privacy Policy
+                {dictionary.form.privacyLink}
               </Link>
             </label>
           </div>
 
-          <p>Choose a convenient way to contact us</p>
+          <p>{dictionary.form.chooseWay}</p>
           <Socials
             setSelectSocial={setSelectSocial}
             selectSocial={formData.selectSocial}
@@ -196,7 +211,7 @@ Email: ${formData.email || '-'}
 
           <div className="row-but" style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
             <button type="submit" className="but-1">
-              Submit an application{' '}
+              {dictionary.form.submit}{' '}
               <FaArrowRightLong color="#FFFFFF" />
             </button>
             {showSuccess && (
@@ -206,7 +221,7 @@ Email: ${formData.email || '-'}
                     <path d="M7.70045 15.75C7.83211 15.978 8.02146 16.1674 8.24949 16.299C8.47751 16.4306 8.73616 16.4999 8.99945 16.4999C9.26274 16.4999 9.5214 16.4306 9.74942 16.299C9.97744 16.1674 10.1668 15.978 10.2985 15.75M2.44595 11.4945C2.34798 11.6019 2.28332 11.7354 2.25984 11.8789C2.23637 12.0223 2.25509 12.1695 2.31373 12.3025C2.37237 12.4356 2.4684 12.5487 2.59014 12.6281C2.71188 12.7075 2.85409 12.7499 2.99945 12.75H14.9995C15.1448 12.7501 15.287 12.7079 15.4089 12.6286C15.5307 12.5493 15.6268 12.4363 15.6856 12.3034C15.7444 12.1705 15.7633 12.0233 15.74 11.8798C15.7167 11.7364 15.6523 11.6028 15.5545 11.4952C14.557 10.467 13.4995 9.37425 13.4995 6C13.4995 4.80653 13.0253 3.66193 12.1814 2.81802C11.3375 1.97411 10.1929 1.5 8.99945 1.5C7.80598 1.5 6.66139 1.97411 5.81747 2.81802C4.97356 3.66193 4.49945 4.80653 4.49945 6C4.49945 9.37425 3.4412 10.467 2.44595 11.4945Z" stroke="#D9D9D9" stroke-width="1.5"/>
                     </svg>
                   </span>
-                Thank you! Your message has been successfully sent.
+                {dictionary.form.success}
               </div>
             )}
           </div>

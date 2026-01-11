@@ -4,6 +4,15 @@
   @include responsive-width;
   @include margin-page;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    overflow-x: clip;
+  }
+
   .row {
     display: flex;
     justify-content: space-between;
@@ -63,6 +72,12 @@
     gap: 20px;
     list-style: none;
     padding: 0;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
 
     @media (max-width: 1150px) {
       display: grid;
@@ -75,6 +90,10 @@
       scroll-snap-type: x mandatory;
       scrollbar-width: none; // Приховати скролбар Firefox
       gap: 20px; // Слайди встик або через невеликий gap
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      overscroll-behavior-x: contain;
 
       &::-webkit-scrollbar {
         display: none;
@@ -93,7 +112,10 @@
       cursor: pointer;
 
       @media (max-width: 1150px) {
-        min-width: 100%; // Слайд на всю ширину
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
         scroll-snap-align: start;
         border: none; // Опціонально для слайдера
       }

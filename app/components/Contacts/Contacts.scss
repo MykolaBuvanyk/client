@@ -34,10 +34,23 @@
   @include margin-page;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    max-width: 100vw;
+    overflow-x: clip;
+  }
   .form-container {
     @include responsive-width;
     margin-top: 30px;
     z-index: 3;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 100vw;
+      padding-left: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+    }
     form {
       max-width: 50%;
       z-index: 4;
@@ -66,10 +79,20 @@
         display: flex;
         flex-direction: row;
         gap: 15px;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+          gap: 0px;
+        }
       }
       .value {
         width: 100%;
+        
+        
         margin-top: 10px;
+        @media (max-width: 768px) {
+          margin-top: 15px;
+        }
         label {
           font-weight: 500;
           font-style: Medium;
@@ -77,9 +100,13 @@
           line-height: 130%;
           letter-spacing: 0%;
           color: #ffffff;
-          &.lab2 {
-            opacity: 0.4;
-          }
+          opacity: 0.4;
+          transition: opacity 0.2s ease;
+        }
+
+        &:focus-within label,
+        &.is-filled label {
+          opacity: 1;
         }
         input,
         textarea {
@@ -95,6 +122,9 @@
           font-size: 16px;
           max-width: 100%;
           min-width: 100%;
+          @media (max-width: 768px) {
+          margin-top: 5px;
+        }
         }
         textarea {
           height: auto;
@@ -106,7 +136,9 @@
         gap: 10px;
         align-items: center;
         margin-top: 20px;
-
+        @media (max-width: 768px) {
+          margin-top: 10px;
+        }
         input[type='checkbox'] {
           appearance: none; // Ховаємо стандартний вигляд
           -webkit-appearance: none;
@@ -182,23 +214,36 @@
           justify-content: space-between;
           margin: 0;
           padding: 0;
+
+          @media (max-width: 768px) {
+            gap: 8px;
+            flex-wrap: nowrap;
+          }
+
           li {
             margin: 0;
             padding: 0;
-            width: 20%;
             box-sizing: border-box;
             padding: 15px 30px;
-            width: 20%;
             background: #111111;
             border-radius: 15px;
             overflow: hidden;
             cursor: pointer;
             border: 1px solid transparent;
+            flex: 1 1 0;
+            min-width: 0;
+
+            @media (max-width: 768px) {
+              flex: 0 0 calc((100% - 32px) / 5);
+              padding: 10px 6px;
+              gap: 6px;
+            }
+
             &:hover {
               border: 1px solid #ffda63;
 
               span {
-                color: #ffffff;
+                opacity: 1;
               }
             }
             display: flex;
@@ -206,8 +251,15 @@
             align-items: center;
             gap: 10px;
             text-decoration: none;
-            width: 100%;
             height: 100%;
+
+            @media (max-width: 768px) {
+              svg {
+                width: 22px !important;
+                height: 22px !important;
+              }
+            }
+
             span {
               font-weight: 400;
               font-style: Regular;
@@ -216,13 +268,20 @@
               letter-spacing: 0%;
               text-align: center;
               vertical-align: middle;
-              color: #5e5e5e;
+              color: #ffffff;
+              opacity: 0.4;
               text-decoration: none;
+
+              @media (max-width: 768px) {
+                font-size: 10px;
+                line-height: 110%;
+                white-space: normal;
+              }
             }
             &.active {
               border: 1px solid #ffda63;
               span {
-                color: #ffffff;
+                opacity: 1;
               }
             }
           }
