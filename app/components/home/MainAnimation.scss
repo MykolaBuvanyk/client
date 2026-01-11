@@ -488,3 +488,18 @@
     transform: rotate(360deg);
   }
 }
+
+/* Move element with ID `elem-spin` left by 10px on small screens
+   and set its SVG visible width to 52px while preserving aspect ratio */
+@media (max-width: 500px) {
+  #elem-spin {
+    transform: translate(50px, 25px);
+
+    svg {
+        width: 90px;
+        height: auto;
+        display: block;
+        overflow: visible;
+      }
+  }
+}
