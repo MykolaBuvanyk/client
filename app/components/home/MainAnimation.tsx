@@ -52,7 +52,7 @@ const MainAnimation = ({ dictionary }: Props) => {
       <div className="big-circle">
         <Image src={BigCicrle} alt="big circle" />
       </div>
-      <div className="elem-spin">
+      <div id='elem-spin' className="elem-spin">
         <div className="spin">
           <div className='gear'>
             <svg width="152" height="154" viewBox="0 0 152 154" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -200,7 +200,7 @@ const MainAnimation = ({ dictionary }: Props) => {
       </div>
       <Link
         href="#contacts"
-        style={{ cursor: 'pointer', width: '140px', height: '140px' }}
+        style={{ cursor: 'pointer' }}
         className="mini-get-offer"
       >
         <GetOffer style={{ cursor: 'pointer' }} />
