@@ -20,11 +20,14 @@
 
   @media (max-width: 768px) {
     zoom: 0.6;
+    height: 69vh;
   }
+
   @media (max-width: 500px) {
     --small-circles-shift-x: -10px;
     --small-circles-shift-y: 15px;
   }
+
   .big-circle {
     position: absolute;
     left: 25%;
@@ -55,14 +58,16 @@
     }
 
     @media (max-width: 500px) {
+
       /* main container uses zoom: 0.6 on small screens; set size so the *visible* svg width is 52px */
       &:not(.elem-spin2):not(.elem-spin3) {
         /* slight nudge down/right (compensates for zoom: 0.6 -> visible shift is smaller) */
         transform: translate(50px, 20px);
 
         .spin {
-          > svg {
-            width: 86.6667px; /* 52 / 0.6 */
+          >svg {
+            width: 86.6667px;
+            /* 52 / 0.6 */
             height: auto;
             display: block;
             overflow: visible;
@@ -76,7 +81,8 @@
 
         /* target ~70px visible width under parent zoom: 0.6 */
         .spin {
-          transform: scale(1.0234); /* 70 / (114 * 0.6) */
+          transform: scale(1.0234);
+          /* 70 / (114 * 0.6) */
           transform-origin: 0 0;
         }
       }
@@ -87,11 +93,13 @@
 
         /* target ~60px visible width under parent zoom: 0.6 */
         .spin {
-          transform: scale(0.8772); /* 60 / (114 * 0.6) */
+          transform: scale(0.8772);
+          /* 60 / (114 * 0.6) */
           transform-origin: 0 0;
         }
       }
     }
+
     .spin {
       position: relative;
       width: 114px;
@@ -305,7 +313,8 @@
 
     @media (max-width: 500px) {
       /* main container uses zoom: 0.6 on small screens; compensate so the *visible* size becomes 64x64 */
-      width: 106.6667px; /* 64 / 0.6 */
+      width: 106.6667px;
+      /* 64 / 0.6 */
       height: 106.6667px;
 
       /* the SVG contains a foreignObject with negative offsets; don't clip it */
@@ -323,7 +332,8 @@
         flex: 0 0 106.6667px;
 
         /* SVG has a foreignObject (-5..150) extending beyond the 140x140 viewBox; shrink content so nothing overflows */
-        transform: scale(0.7111); /* 140 / 150 */
+        transform: scale(0.7111);
+        /* 140 / 150 */
         transform-origin: 50% 50%;
       }
 
@@ -376,6 +386,11 @@
     align-items: center;
     flex-direction: column;
 
+    @media (max-width: 1150px) {
+      padding: 15px 25px;
+      left: 39%;
+    }
+
     p {
       font-weight: 400;
       font-style: Regular;
@@ -391,6 +406,7 @@
         transform: translateY(-8px);
         transform-box: fill-box;
       }
+
       white-space: nowrap;
     }
 
@@ -410,7 +426,7 @@
     position: absolute;
     left: -17%;
     top: 0%;
-
+    z-index: -1000;
     svg {
       min-width: 100%;
 
@@ -496,10 +512,10 @@
     transform: translate(50px, 25px);
 
     svg {
-        width: 90px;
-        height: auto;
-        display: block;
-        overflow: visible;
-      }
+      width: 90px;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
   }
 }
