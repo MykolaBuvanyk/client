@@ -45,7 +45,7 @@ const Cookies = ({ lang }: { lang: Locale }) => {
           <button className="accept" onClick={handleAccept}>
             {t('cookies.accept')}{' '}
             <div className="svg">
-              <FaArrowRightLong color="#0C0C0C99" />
+              <FaArrowRightLong />
             </div>
           </button>
           <button
@@ -56,7 +56,7 @@ const Cookies = ({ lang }: { lang: Locale }) => {
           >
             {t('cookies.reject')}
             <div className="svg">
-              <FaArrowRightLong color="#ffffff" />
+              <FaArrowRightLong />
             </div>
           </button>
         </div>
